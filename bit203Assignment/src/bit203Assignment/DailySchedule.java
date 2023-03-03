@@ -6,6 +6,14 @@ package bit203Assignment;
 public class DailySchedule {
 	private String date, workLocation, workHours, workReport, supervisorComments;
 	
+	
+	public DailySchedule() {
+		setDate(date);
+		setWorkLocation(workLocation);
+		setWorkHours(workHours);
+		setWorkReport(workReport);
+		setSupervisorComments(supervisorComments);
+		}
 	// Constructor
 	public DailySchedule(String date, String workLocation, String workHours, 
 						 String workReport, String supervisorComments) {
@@ -56,5 +64,11 @@ public class DailySchedule {
 		this.supervisorComments = supervisorComments;
 	}
 	
-	// TODO: toString()
+	public String toString() {
+		return ("Date: "+ getDate()
+				+ "\nWork location: "+ getWorkLocation()
+				+ "\nWork hours: "+ getWorkHours()
+				+ "\nWork Report: "+ getWorkReport()
+				+ "\nSupervisor Comment: "+ getSupervisorComments());
+	}
 }

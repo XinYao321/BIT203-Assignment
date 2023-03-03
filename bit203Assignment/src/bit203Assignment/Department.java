@@ -1,14 +1,14 @@
 package bit203Assignment;
-
+import java.util.*;
 // Department class
 
 /*@author:
  * Lee Xin Yao B2100617
 */
 public class Department {
-	private String deptID;
-	private String deptName;
-	
+	private String deptID, deptName; // Department attributes
+	private ArrayList<Employee> employee; // Employee object
+		
 	// Constructor
 	public Department(String deptID, String deptName) {
 		setDeptID(deptID);
@@ -31,5 +31,9 @@ public class Department {
 		this.deptName = deptName;
 	}
 	
-	// TODO: toString()
+	public String toString() {
+		return ("Department ID "+'\t'+"Department Name "+
+				"\n"+getDeptID()+'\t'+'\t'+getDeptName());
+	}
+	
 }

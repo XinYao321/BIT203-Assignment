@@ -1,5 +1,5 @@
 package bit203Assignment;
-
+import java.util.*;
 // Supervisor subclass
 
 /*@author:
@@ -7,10 +7,20 @@ package bit203Assignment;
  * Lee Xin Yao B2100617
  * */
 public class Supervisor extends Employee{
+	Scanner sc = new Scanner(System.in);
+	private String employeeID, password, name, position, email, FWAStatus;
+	private ArrayList<Employee> employee;
 	
-	private String employeeID, password, name, position, email;
+	public Supervisor() {
+		setEmployeeID(employeeID);
+		setPassword(password);
+		setName(name);
+		setPosition(position);
+		setEmail(email);
+	}
 	
-	public Supervisor(String employeeID, String password, String name, String position, String email,String FWAStatus) {
+	// Constructor
+	public Supervisor(String employeeID, String password, String name, String position, String email, String FWAStatus) {
 		super(employeeID, password, name, position, email, FWAStatus);
 		setEmployeeID(employeeID);
 		setPassword(password);
@@ -18,7 +28,8 @@ public class Supervisor extends Employee{
 		setPosition(position);
 		setEmail(email);
 	}
-
+	
+	/*Getters and Setters*/
 	public String getEmployeeID() {
 		return employeeID;
 	}
@@ -59,5 +70,8 @@ public class Supervisor extends Employee{
 		this.email = email;
 	}
 	
-	// TODO: toString(), reviewFWARequest(), reviewEmployeeSchedule()
+	//public String toString() {}
+	public String toString() {
+		return (super.toString());
+	}
 }

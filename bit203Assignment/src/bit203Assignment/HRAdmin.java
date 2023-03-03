@@ -1,5 +1,5 @@
 package bit203Assignment;
-
+import java.util.*;
 // HR Admin subclass
 
 /*@author:
@@ -8,7 +8,17 @@ package bit203Assignment;
  * */
 public class HRAdmin extends Employee{
 	
+	Scanner sc = new Scanner(System.in);
 	private String employeeID, password, name, position, email;
+	
+	public HRAdmin() {
+		setEmployeeID(employeeID);
+		setPassword(password);
+		setName(name);
+		setPosition(position);
+		setEmail(email); 
+		}
+	
 	
 	// Constructor
 	public HRAdmin(String employeeID, String password, String name, String position, String email,String FWAStatus) {
@@ -60,5 +70,8 @@ public class HRAdmin extends Employee{
 		this.email = email;
 	}
 	
-	// TODO: toString(), registerEmployee(), viewFWAAnalytics()
+	/*toString() method*/
+	public String toString() {
+		return (super.toString());
+	}
 }
