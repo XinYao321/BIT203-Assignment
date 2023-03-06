@@ -1,6 +1,8 @@
 package bit203Assignment;
-import java.util.*;
-// HR Admin subclass
+
+/*HR Admin class
+ * Subclass of Employee superclass
+ * This class inherits all attributes and methods from Employee*/
 
 /*@author:
  * Sebastian Chai B2000080
@@ -8,7 +10,6 @@ import java.util.*;
  * */
 public class HRAdmin extends Employee{
 	
-	Scanner sc = new Scanner(System.in);
 	private String employeeID, password, name, position, email;
 	
 	public HRAdmin() {
@@ -29,7 +30,8 @@ public class HRAdmin extends Employee{
 		setPosition(position);
 		setEmail(email);
 	}
-
+	
+	// Getters and Setters method
 	public String getEmployeeID() {
 		return employeeID;
 	}
@@ -70,7 +72,7 @@ public class HRAdmin extends Employee{
 		this.email = email;
 	}
 	
-	/*toString() method*/
+	//toString() method
 	public String toString() {
 		return (super.toString());
 	}

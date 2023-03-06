@@ -1,6 +1,7 @@
 package bit203Assignment;
 import java.util.*;
-// Department class
+/*Department class
+ * This class stores department's information, such as deptID and deptName*/
 
 /*@author:
  * Lee Xin Yao B2100617

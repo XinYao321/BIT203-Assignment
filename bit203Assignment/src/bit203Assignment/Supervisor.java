@@ -70,8 +70,7 @@ public class Supervisor extends Employee{
 		this.email = email;
 	}
 	
-	//public String toString() {}
 	public String toString() {
-		return (super.toString());
+		return ("Supervisor's details \n"+super.toString());
 	}
 }
