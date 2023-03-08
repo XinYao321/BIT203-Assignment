@@ -357,7 +357,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_1.getRequestDate()+
 										"\nWork Type: "+fr2_1.getWorkType()+
 										"\nDescription: "+fr2_1.getDescription()+
-										"  Reason: "+fr2_1.getReason()+
+										"\nReason: "+fr2_1.getReason()+
 										"\nStatus: "+fr2_1.getStatus()+
 										"\nComment: "+fr2_1.getComment());
 								
@@ -365,7 +365,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_2.getRequestDate()+
 										"\nWork Type: "+fr2_2.getWorkType()+
 										"\nDescription: "+fr2_2.getDescription()+
-										"  Reason: "+fr2_2.getReason()+
+										"\nReason: "+fr2_2.getReason()+
 										"\nStatus: "+fr2_2.getStatus()+
 										"\nComment: "+fr2_2.getComment());
 								// Ensure Supervisor selects a valid requestID
@@ -428,7 +428,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_1.getRequestDate()+
 										"\nWork Type: "+fr3_1.getWorkType()+
 										"\nDescription: "+fr3_1.getDescription()+
-										"  Reason: "+fr3_1.getReason()+
+										"\nReason: "+fr3_1.getReason()+
 										"\nStatus: "+fr3_1.getStatus()+
 										"\nComment: "+fr3_1.getComment());
 								
@@ -436,7 +436,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_2.getRequestDate()+
 										"\nWork Type: "+fr3_2.getWorkType()+
 										"\nDescription: "+fr3_2.getDescription()+
-										"  Reason: "+fr3_2.getReason()+
+										"\nReason: "+fr3_2.getReason()+
 										"\nStatus: "+fr3_2.getStatus()+
 										"\nComment: "+fr3_2.getComment());
 								// Ensure Supervisor selects a valid requestID
@@ -498,7 +498,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_1.getRequestDate()+
 										"\nWork Type: "+fr4_1.getWorkType()+
 										"\nDescription: "+fr4_1.getDescription()+
-										"  Reason: "+fr4_1.getReason()+
+										"\nReason: "+fr4_1.getReason()+
 										"\nStatus: "+fr4_1.getStatus()+
 										"\nComment: "+fr4_1.getComment());
 								
@@ -506,7 +506,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_2.getRequestDate()+
 										"\nWork Type: "+fr4_2.getWorkType()+
 										"\nDescription: "+fr4_2.getDescription()+
-										"  Reason: "+fr4_2.getReason()+
+										"\nReason: "+fr4_2.getReason()+
 										"\nStatus: "+fr4_2.getStatus()+
 										"\nComment: "+fr4_2.getComment());
 								// Ensure Supervisor selects a valid requestID
