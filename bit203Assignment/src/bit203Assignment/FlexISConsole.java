@@ -263,6 +263,314 @@ public class FlexISConsole {
 				
 				// Option 3 - Review FWA Request
 				case 3:
+					while(true) {
+						System.out.println("\nYou have pending FWA requests.");
+						
+						// Ensure Supervisor selects a valid employeeID
+						while(true) 
+						{
+							System.out.println("E100 - Adam"
+												+ "\nE200 - Lucas"
+												+ "\nE300 - Sara"
+												+ "\nE400 - John");
+							System.out.print("\nSelect an employee ID: ");
+							employeeID = sc.nextLine();
+							if(employeeID.isEmpty())
+							{
+								System.out.println("Invalid employee ID");
+							}
+
+							else if("E100".equalsIgnoreCase(employeeID)) 
+							{
+								// Display available FWA Requests  
+								System.out.println("\nRequest ID: "+fr1_1.getRequestID()+
+										"\nRequest Date: "+fr1_1.getRequestDate()+
+										"\nWork Type: "+fr1_1.getWorkType()+
+										"\nDescription: "+fr1_1.getDescription()+
+										"  Reason: "+fr1_1.getReason()+
+										"\nStatus: "+fr1_1.getStatus()+
+										"\nComment: "+fr1_1.getComment());
+								
+								System.out.println("\nRequest ID: "+fr1_2.getRequestID()+
+										"\nRequest Date: "+fr1_2.getRequestDate()+
+										"\nWork Type: "+fr1_2.getWorkType()+
+										"\nDescription: "+fr1_2.getDescription()+
+										"  Reason: "+fr1_2.getReason()+
+										"\nStatus: "+fr1_2.getStatus()+
+										"\nComment: "+fr1_2.getComment());
+								// Ensure Supervisor selects a valid requestID
+								System.out.println("Enter Request ID: ");
+								requestID = sc.nextLine();
+								if (requestID.isEmpty())
+									System.out.println("Invalid Request ID.");
+								else if
+									("R001".equalsIgnoreCase(requestID)) 
+								{
+									// Determine if status is set to "Pending"
+									 if (fr1_1.getStatus()=="Pending")
+									 {
+										 System.out.println("Accepted or Rejected?: ");
+										 status = sc.nextLine();
+											if(status.isEmpty())
+												System.out.println("Invalid status.");
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+												System.out.print("\nEnter your comment: ");
+												comment = sc.nextLine();
+												break;
+									 }
+									 else
+									 {
+										 System.out.println("Status is not pending");
+										 break;
+									 }
+								}
+									// Determine if status is set to "Pending"
+								else if
+								("R002".equalsIgnoreCase(requestID)) 
+								{
+								 if (fr1_2.getStatus()=="Pending")
+								 {
+									 System.out.println("Accepted or Rejected?: ");
+									 status = sc.nextLine();
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
+								 }
+								 else
+								 {
+									 System.out.println("Status is not pending");
+									 break;
+								 }
+								}
+								 else
+								 {
+									 System.out.println("Invalid Request ID.");
+								 }
+								}
+							else if("E200".equalsIgnoreCase(employeeID)) 
+							{
+								// Display available FWA Requests  
+								System.out.println("\nRequest ID: "+fr2_1.getRequestID()+
+										"\nRequest Date: "+fr2_1.getRequestDate()+
+										"\nWork Type: "+fr2_1.getWorkType()+
+										"\nDescription: "+fr2_1.getDescription()+
+										"  Reason: "+fr2_1.getReason()+
+										"\nStatus: "+fr2_1.getStatus()+
+										"\nComment: "+fr2_1.getComment());
+								
+								System.out.println("\nRequest ID: "+fr2_2.getRequestID()+
+										"\nRequest Date: "+fr2_2.getRequestDate()+
+										"\nWork Type: "+fr2_2.getWorkType()+
+										"\nDescription: "+fr2_2.getDescription()+
+										"  Reason: "+fr2_2.getReason()+
+										"\nStatus: "+fr2_2.getStatus()+
+										"\nComment: "+fr2_2.getComment());
+								// Ensure Supervisor selects a valid requestID
+								System.out.println("Enter Request ID: ");
+								requestID = sc.nextLine();
+								if (requestID.isEmpty())
+									System.out.println("Invalid Request ID.");
+								else if
+									("R003".equalsIgnoreCase(requestID)) 
+								{
+									// Determine if status is set to "Pending"
+
+									 if (fr2_1.getStatus()=="Pending")
+									 {
+										 System.out.println("Accepted or Rejected?: ");
+										 status = sc.nextLine();
+											if(status.isEmpty())
+												System.out.println("Invalid status.");
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+												System.out.print("\nEnter your comment: ");
+												comment = sc.nextLine();
+												break;
+									 }
+									 else
+									 {
+										 System.out.println("Status is not pending");
+										 break;
+									 }
+								}
+								// Determine if status is set to "Pending"
+								else if
+								("R004".equalsIgnoreCase(requestID)) 
+								{
+								 if (fr2_2.getStatus()=="Pending")
+								 {
+									 System.out.println("Accepted or Rejected?: ");
+									 status = sc.nextLine();
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
+								 }
+								 else
+								 {
+									 System.out.println("Status is not pending");
+									 break;
+								 }
+								}
+								 else
+								 {
+									 System.out.println("Invalid Request ID.");
+								 }
+								}
+							else if("E300".equalsIgnoreCase(employeeID)) 
+							{
+								// Display available FWA Requests  
+								System.out.println("\nRequest ID: "+fr3_1.getRequestID()+
+										"\nRequest Date: "+fr3_1.getRequestDate()+
+										"\nWork Type: "+fr3_1.getWorkType()+
+										"\nDescription: "+fr3_1.getDescription()+
+										"  Reason: "+fr3_1.getReason()+
+										"\nStatus: "+fr3_1.getStatus()+
+										"\nComment: "+fr3_1.getComment());
+								
+								System.out.println("\nRequest ID: "+fr3_2.getRequestID()+
+										"\nRequest Date: "+fr3_2.getRequestDate()+
+										"\nWork Type: "+fr3_2.getWorkType()+
+										"\nDescription: "+fr3_2.getDescription()+
+										"  Reason: "+fr3_2.getReason()+
+										"\nStatus: "+fr3_2.getStatus()+
+										"\nComment: "+fr3_2.getComment());
+								// Ensure Supervisor selects a valid requestID
+								System.out.println("Enter Request ID: ");
+								requestID = sc.nextLine();
+								if (requestID.isEmpty())
+									System.out.println("Invalid Request ID.");
+								else if
+								// Determine if status is set to "Pending"
+									("R005".equalsIgnoreCase(requestID)) 
+								{
+									 if (fr3_1.getStatus()=="Pending")
+									 {
+										 System.out.println("Accepted or Rejected?: ");
+										 status = sc.nextLine();
+											if(status.isEmpty())
+												System.out.println("Invalid status.");
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+												System.out.print("\nEnter your comment: ");
+												comment = sc.nextLine();
+												break;
+									 }
+									 else
+									 {
+										 System.out.println("Status is not pending");
+										 break;
+									 }
+								}
+								else if
+								// Determine if status is set to "Pending"
+								("R006".equalsIgnoreCase(requestID)) 
+								{
+								 if (fr3_2.getStatus()=="Pending")
+								 {
+									 System.out.println("Accepted or Rejected?: ");
+									 status = sc.nextLine();
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
+								 }
+								 else
+								 {
+									 System.out.println("Status is not pending");
+									 break;
+								 }
+								}
+								 else
+								 {
+									 System.out.println("Invalid Request ID.");
+								 }
+								}
+							else if("E400".equalsIgnoreCase(employeeID)) 
+							{
+								// Display available FWA Requests  
+								System.out.println("\nRequest ID: "+fr4_1.getRequestID()+
+										"\nRequest Date: "+fr4_1.getRequestDate()+
+										"\nWork Type: "+fr4_1.getWorkType()+
+										"\nDescription: "+fr4_1.getDescription()+
+										"  Reason: "+fr4_1.getReason()+
+										"\nStatus: "+fr4_1.getStatus()+
+										"\nComment: "+fr4_1.getComment());
+								
+								System.out.println("\nRequest ID: "+fr4_2.getRequestID()+
+										"\nRequest Date: "+fr4_2.getRequestDate()+
+										"\nWork Type: "+fr4_2.getWorkType()+
+										"\nDescription: "+fr4_2.getDescription()+
+										"  Reason: "+fr4_2.getReason()+
+										"\nStatus: "+fr4_2.getStatus()+
+										"\nComment: "+fr4_2.getComment());
+								// Ensure Supervisor selects a valid requestID
+								System.out.println("Enter Request ID: ");
+								requestID = sc.nextLine();
+								if (requestID.isEmpty())
+									System.out.println("Invalid Request ID.");
+								else if
+									("R007".equalsIgnoreCase(requestID)) 
+								{
+									// Determine if status is set to "Pending"
+									 if (fr4_1.getStatus()=="Pending")
+									 {
+										 System.out.println("Accepted or Rejected?: ");
+										 status = sc.nextLine();
+											if(status.isEmpty())
+												System.out.println("Invalid status.");
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+												System.out.print("\nEnter your comment: ");
+												comment = sc.nextLine();
+												break;
+									 }
+									 else
+									 {
+										 System.out.println("Status is not pending");
+										 break;
+									 }
+								}
+								else if
+								// Determine if status is set to "Pending"
+								("R008".equalsIgnoreCase(requestID)) 
+								{
+								 if (fr4_2.getStatus()=="Pending")
+								 {
+									 System.out.println("Accepted or Rejected?: ");
+									 status = sc.nextLine();
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
+								 }
+								 else
+								 {
+									 System.out.println("Status is not pending");
+									 break;
+								 }
+								}
+								 else
+								 {
+									 System.out.println("Invalid Request ID.");
+								 }
+								}
+							else
+							{
+								System.out.println("Invalid employee ID");
+							}
+									
+							}
+								
+						break;
+						}
+					break;
 				
 				// Option 4 - Update Employee Schedules			
 				case 4:
