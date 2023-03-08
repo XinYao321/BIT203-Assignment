@@ -1,6 +1,8 @@
 package bit203Assignment;
 import bit203Assignment.FlexIS;
 import java.util.*;
+import java.text.SimpleDateFormat;
+
 
 /*Driver class- FlexConsole
  * This class contains main method
@@ -20,7 +22,9 @@ public class FlexISConsole {
 		Employee e = new Employee();
 		FlexIS f = new FlexIS();
 		ArrayList<Department> department;
-
+		
+		// FWARequest objects for review
+		FWARequest fr1 = new FWARequest("2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending", "");
 		
 		// DailySchedule objects for update and review purposes
 		DailySchedule ds1 = new DailySchedule("2023-02-05", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
@@ -39,6 +43,7 @@ public class FlexISConsole {
 			int choice = 0;
 			String employeeID, password, name,position, email, FWAStatus;
 			String date, workLocation, workHours, workReport, supervisorComments;
+			String requestID, requestDate, workType, description, reason, status, comment;
 			// HR Admin object
 			HRAdmin hr = new HRAdmin("HR100","IamNicholas","Nicholas","HRAdmin","nicholaszz@gmail.com","-");
 			
@@ -184,6 +189,57 @@ public class FlexISConsole {
 						
 				// Option 2 - Submit FWA Request
 				case 2:
+					// Set request date to system date
+					while(true) {
+						System.out.print("Today's date (yyyy-MM-dd): ");
+						requestDate = new SimpleDateFormat("yyyy_MM_dd").format(Calendar.getInstance().getTime());
+						if(requestDate.isEmpty())
+							System.out.println("Invalid date.");
+						else
+							System.out.print(requestDate);
+							break;
+					}
+
+					// work type validation
+					while(true) {
+						System.out.print("\n1. Work-from-home\n"
+										+ "2. Work-in-office\n"
+										+ "3. Hybrid");
+						System.out.print("\nEnter work type: ");
+						workType = sc.nextLine();
+						if("Work-from-home".equalsIgnoreCase(workType)|| "Work-in-office".equalsIgnoreCase(workType)|| 
+							"Hybrid".equalsIgnoreCase(workType)) 
+							break;
+					}
+
+					// description validation	
+					while(true) {
+						System.out.print("\nEnter description: ");
+						description = sc.nextLine();	
+						if(description.isEmpty())
+							System.out.println("Invalid description.");
+						else
+							break;
+						}
+
+					// reason validation	
+					while(true) {
+						System.out.print("\nEnter reason: ");
+						reason = sc.nextLine();	
+						if(reason.isEmpty())
+							System.out.println("Invalid reason.");
+						else
+							break;
+						}
+
+					// set status to "Pending" 	
+					while(true) {
+						status = "Pending";	
+						break;
+						}
+					
+					System.out.println("\nYour FWA request has been submitted successfully.");
+					break;
 				
 				// Option 3 - Review FWA Request
 				case 3:
