@@ -209,7 +209,7 @@ public class FlexISConsole {
 					// Set request date to system date
 					while(true) {
 						System.out.print("\nToday's date (yyyy-MM-dd): ");
-						requestDate = new SimpleDateFormat("yyyy_MM_dd").format(Calendar.getInstance().getTime());
+						requestDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
 						if(requestDate.isEmpty())
 							System.out.println("Invalid date.");
 						else
@@ -369,7 +369,6 @@ public class FlexISConsole {
 					
 				// Option 7: Display Employee details
 				case 7:
-					f.displayEmployeeInfo();
 					break;
 				
 				// Option 8: Display daily schedule details
