@@ -24,10 +24,10 @@ public class FlexISConsole {
 		ArrayList<Department> department;
 		
 		// FWARequest objects for review
-		FWARequest fr1 = new FWARequest("1","2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending", "");
-		FWARequest fr2 = new FWARequest("2","2023-03-08", "Flexi-Hours", "I can work for 1 week at office", "Home Wi-Fi not working", "Pending", "");
-		FWARequest fr3 = new FWARequest("3","2023-03-08", "Work-from-home", "-", "-", "Rejected", "");
-		FWARequest fr4 = new FWARequest("4","2023-03-08", "Hybrid", "Can set permanently?", "Preferred", "Pending", "");
+		FWARequest fr1 = new FWARequest("1","2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending");
+		FWARequest fr2 = new FWARequest("2","2023-03-08", "Flexi-Hours", "I can work for 1 week at office", "Home Wi-Fi not working", "Pending");
+		FWARequest fr3 = new FWARequest("3","2023-03-08", "Work-from-home", "-", "-", "Rejected");
+		FWARequest fr4 = new FWARequest("4","2023-03-08", "Hybrid", "Can set permanently?", "Preferred", "Pending");
 		
 		// DailySchedule objects for update and review purposes
 		DailySchedule ds1 = new DailySchedule("2023-02-05", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
@@ -85,7 +85,9 @@ public class FlexISConsole {
 					// Display available options for HR Admin
 					System.out.println("Select options below to continue: "
 									+ "\n1. Register Employee"
-									+ "\n6. View FWA Analytics");
+									+ "\n6. View FWA Analytics"
+									+ "\n7. Display employee details"
+									+ "\n8. Display daily schedules details");
 					break;
 				}
 				// Supervisor login with valid employee ID and password
@@ -95,7 +97,9 @@ public class FlexISConsole {
 					System.out.println("Select the options below to continue:"
 									+ "\n3. Review FWA Request"
 									+ "\n5. Review Employee Schedules"
-									+ "\n6. View FWA Analytics");
+									+ "\n6. View FWA Analytics"
+									+ "\n7. Display employee details"
+									+ "\n8. Display daily schedules details");
 					break;
 					}
 				// Existing employees login with valid employee and password
@@ -252,7 +256,6 @@ public class FlexISConsole {
 						}
 					
 					System.out.println("\nYour FWA request has been submitted successfully.");
-					System.out.println("\nAn email has been sent to your supervisor.");
 					break;
 				
 				// Option 3 - Review FWA Request
