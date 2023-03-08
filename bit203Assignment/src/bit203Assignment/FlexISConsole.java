@@ -252,6 +252,7 @@ public class FlexISConsole {
 						}
 					
 					System.out.println("\nYour FWA request has been submitted successfully.");
+					System.out.println("\nAn email has been sent to your supervisor.");
 					break;
 				
 				// Option 3 - Review FWA Request
