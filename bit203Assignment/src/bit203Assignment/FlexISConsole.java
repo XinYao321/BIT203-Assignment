@@ -24,10 +24,14 @@ public class FlexISConsole {
 		ArrayList<Department> department;
 		
 		// FWARequest objects for review
-		FWARequest fr1 = new FWARequest("1","2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending");
-		FWARequest fr2 = new FWARequest("2","2023-03-08", "Flexi-Hours", "I can work for 1 week at office", "Home Wi-Fi not working", "Pending");
-		FWARequest fr3 = new FWARequest("3","2023-03-08", "Work-from-home", "-", "-", "Rejected");
-		FWARequest fr4 = new FWARequest("4","2023-03-08", "Hybrid", "Can set permanently?", "Preferred", "Pending");
+		FWARequest fr1_1 = new FWARequest("R001","2023-03-01", "Work-from-home", "Can set for 3 days?", "Not well", "Accepted", "Understood, take care");
+		FWARequest fr1_2 = new FWARequest("R002","2023-03-07", "Flexi-Hours", "I can work for 1 week at office", "Home Wi-Fi not working", "Pending", "");
+		FWARequest fr2_1 = new FWARequest("R003","2023-03-01", "Hybrid", "May I for 1 month?", "-", "Rejected", "Reason must be given");
+		FWARequest fr2_2 = new FWARequest("R004","2023-03-08", "Flexi-Hours", "I can do for 3 weeks", "None", "Pending", "");
+		FWARequest fr3_1 = new FWARequest("R005","2023-02-27", "Work-from-home", "-", "-", "Rejected", "");
+		FWARequest fr3_2 = new FWARequest("R006","2023-03-08", "Hybrid", "Can set until changes are needed?", "Preferred", "Pending", "");
+		FWARequest fr4_1 = new FWARequest("R007","2023-03-01", "Work-from-home", "Need 3 days", "Need to take care of son", "Accepted", "");
+		FWARequest fr4_2 = new FWARequest("R008","2023-03-08", "Work-from-home", "Can set for 3 days?", "Not feeling well", "Pending", "");
 		
 		// DailySchedule objects for update and review purposes
 		DailySchedule ds1 = new DailySchedule("2023-02-05", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
@@ -201,19 +205,14 @@ public class FlexISConsole {
 					while(true) {
 						if (i == i)
 							i++;
-							requestID = Integer.toString(i);
-							System.out.print("Request ID: "+requestID);
+							requestID = "R00"+Integer.toString(i);
 
 							break;
 					}
 					// Set request date to system date
 					while(true) {
 						System.out.print("\nToday's date (yyyy-MM-dd): ");
-						requestDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-						if(requestDate.isEmpty())
-							System.out.println("Invalid date.");
-						else
-							System.out.print(requestDate);
+						requestDate = new SimpleDateFormat("yyyy_MM_dd").format(Calendar.getInstance().getTime());
 							break;
 					}
 
@@ -256,6 +255,10 @@ public class FlexISConsole {
 						}
 					
 					System.out.println("\nYour FWA request has been submitted successfully.");
+					System.out.println("Request ID: "+requestID);
+					System.out.println(requestDate);
+					System.out.println("An email has been sent to your supervisor.");
+
 					break;
 				
 				// Option 3 - Review FWA Request
