@@ -24,7 +24,10 @@ public class FlexISConsole {
 		ArrayList<Department> department;
 		
 		// FWARequest objects for review
-		FWARequest fr1 = new FWARequest("2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending", "");
+		FWARequest fr1 = new FWARequest("1","2023-03-08", "Work-from-home", "Can set for 2 weeks?", "Not well", "Pending");
+		FWARequest fr2 = new FWARequest("2","2023-03-08", "Flexi-Hours", "I can work for 1 week at office", "Home Wi-Fi not working", "Pending");
+		FWARequest fr3 = new FWARequest("3","2023-03-08", "Work-from-home", "-", "-", "Rejected");
+		FWARequest fr4 = new FWARequest("4","2023-03-08", "Hybrid", "Can set permanently?", "Preferred", "Pending");
 		
 		// DailySchedule objects for update and review purposes
 		DailySchedule ds1 = new DailySchedule("2023-02-05", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
@@ -41,6 +44,7 @@ public class FlexISConsole {
 		
 		try (Scanner sc = new Scanner(System.in)) {
 			int choice = 0;
+			int i = 0;
 			String employeeID, password, name,position, email, FWAStatus;
 			String date, workLocation, workHours, workReport, supervisorComments;
 			String requestID, requestDate, workType, description, reason, status, comment;
@@ -81,7 +85,9 @@ public class FlexISConsole {
 					// Display available options for HR Admin
 					System.out.println("Select options below to continue: "
 									+ "\n1. Register Employee"
-									+ "\n6. View FWA Analytics");
+									+ "\n6. View FWA Analytics"
+									+ "\n7. Display employee details"
+									+ "\n8. Display daily schedules details");
 					break;
 				}
 				// Supervisor login with valid employee ID and password
@@ -91,7 +97,9 @@ public class FlexISConsole {
 					System.out.println("Select the options below to continue:"
 									+ "\n3. Review FWA Request"
 									+ "\n5. Review Employee Schedules"
-									+ "\n6. View FWA Analytics");
+									+ "\n6. View FWA Analytics"
+									+ "\n7. Display employee details"
+									+ "\n8. Display daily schedules details");
 					break;
 					}
 				// Existing employees login with valid employee and password
@@ -189,9 +197,18 @@ public class FlexISConsole {
 						
 				// Option 2 - Submit FWA Request
 				case 2:
+					// auto generate request ID
+					while(true) {
+						if (i == i)
+							i++;
+							requestID = Integer.toString(i);
+							System.out.print("Request ID: "+requestID);
+
+							break;
+					}
 					// Set request date to system date
 					while(true) {
-						System.out.print("Today's date (yyyy-MM-dd): ");
+						System.out.print("\nToday's date (yyyy-MM-dd): ");
 						requestDate = new SimpleDateFormat("yyyy_MM_dd").format(Calendar.getInstance().getTime());
 						if(requestDate.isEmpty())
 							System.out.println("Invalid date.");
@@ -202,12 +219,12 @@ public class FlexISConsole {
 
 					// work type validation
 					while(true) {
-						System.out.print("\n1. Work-from-home\n"
-										+ "2. Work-in-office\n"
+						System.out.print("\n1. Flexi-hour\n"
+										+ "2. Work-from-home\n"
 										+ "3. Hybrid");
 						System.out.print("\nEnter work type: ");
 						workType = sc.nextLine();
-						if("Work-from-home".equalsIgnoreCase(workType)|| "Work-in-office".equalsIgnoreCase(workType)|| 
+						if("Flexi-hour".equalsIgnoreCase(workType)|| "Work-from-home".equalsIgnoreCase(workType)|| 
 							"Hybrid".equalsIgnoreCase(workType)) 
 							break;
 					}
