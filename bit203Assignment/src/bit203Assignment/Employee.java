@@ -1,10 +1,12 @@
 package bit203Assignment;
-import java.util.Scanner;
+
 
 /*
  * This is the Employee superclass
  * Supervisor and HRAdmin class are its subclasses
- * This class stores employee's information*/
+ * This class stores employee's information
+ * This class contains constructor, getters and setters method, and toString() method
+ * An equals() method is added to check if 2 employee IDs are the same*/
 
 /*@author:
  * Sebastian Chai B2000080
@@ -12,12 +14,9 @@ import java.util.Scanner;
  * */
 
 public class Employee {
-	
-	Scanner sc = new Scanner(System.in);
 	// Attributes
 	private String employeeID, password, name, position, email, FWAStatus;
-	private Department deptID, deptName;
-	private DailySchedule date, workLocation, workHours, workReport;
+	private String deptID, deptName;
 	
 	public Employee() {
 		setEmployeeID(employeeID);
@@ -38,8 +37,7 @@ public class Employee {
 		setPosition(position);
 		setEmail(email);
 		setFWAStatus(FWAStatus);
-
-	}
+		}
 	
 	/*Getters and Setters*/
 	public String getEmployeeID() {
@@ -90,73 +88,25 @@ public class Employee {
 		FWAStatus = fWAStatus;
 	}
 
-	public Department getDeptID() {
-		return deptID;
-	}
-
-	public void setDeptID(Department deptID) {
-		this.deptID = deptID;
-	}
-
-	public Department getDeptName() {
-		return deptName;
-	}
-
-	public void setDeptName(Department deptName) {
-		this.deptName = deptName;
-	}
-	
-	public DailySchedule getDate() {
-		return date;
-	}
-
-	public void setDate(DailySchedule date) {
-		this.date = date;
-	}
-	
-	
-	public DailySchedule getWorkLocation() {
-		return workLocation;
-	}
-
-	public void setWorkLocation(DailySchedule workLocation) {
-		this.workLocation = workLocation;
-	}
-
-	public DailySchedule getWorkHours() {
-		return workHours;
-	}
-
-	public void setWorkHours(DailySchedule workHours) {
-		this.workHours = workHours;
-	}
-
-	public DailySchedule getWorkReport() {
-		return workReport;
-	}
-
-	public void setWorkReport(DailySchedule workReport) {
-		this.workReport = workReport;
-	}
 	
 	/*toString() method*/
 	public String toString() {
-		return 
-		(
-			"Employee ID "+'\t'+"Password"+'\t'+"Name"+'\t'+"Position"+'\t'+"Email"+'\t'+'\t'+"FWAStatus"+
-	  "\n"+ getEmployeeID()+'\t'+'\t'+getPassword()+'\t'+getName()+'\t'+getPosition()+'\t'+
-	  getEmail()+'\t'+getFWAStatus()
-	  );
+		return("Employee ID: "+getEmployeeID()
+				+ "\nPassword: "+ getPassword() 
+				+ "\nName: "+ getName()
+				+ "\nPosition: "+getPosition()
+				+ "\nEmail: "+getEmail()
+				+ "\nFWA Status: "+getFWAStatus()
+				);
 		}
 	
 	/*equals() method to check if two employee IDs are the same*/
 	public boolean equals(Object obj) {
 		Employee e = (Employee) obj;
 		if(obj instanceof Employee) {
-			if(this.employeeID.equals(e.employeeID))
+			if(this.employeeID.equalsIgnoreCase(e.employeeID))
 				return true;
 		}
 		return false;
 	}
-	
-	}
+}

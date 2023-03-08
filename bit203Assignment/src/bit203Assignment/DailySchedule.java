@@ -1,8 +1,14 @@
 package bit203Assignment;
 
+
+/*This is the DailySchedule class
+ * It stores information of an employee's daily schedule
+ * Such as date, work location, work hours, work report, and supervisor comment*/
+
 /*@author:
  * Lee Xin Yao B2100617
  */
+
 public class DailySchedule {
 	private String date, workLocation, workHours, workReport, supervisorComments;
 	

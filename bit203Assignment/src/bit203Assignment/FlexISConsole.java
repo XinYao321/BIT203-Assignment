@@ -1,5 +1,5 @@
 package bit203Assignment;
-import bit203Assignment.FlexIS;
+//import bit203Assignment.FlexIS;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
@@ -287,7 +287,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_1.getRequestDate()+
 										"\nWork Type: "+fr1_1.getWorkType()+
 										"\nDescription: "+fr1_1.getDescription()+
-										"  Reason: "+fr1_1.getReason()+
+										"\nReason: "+fr1_1.getReason()+
 										"\nStatus: "+fr1_1.getStatus()+
 										"\nComment: "+fr1_1.getComment());
 								
@@ -295,7 +295,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_2.getRequestDate()+
 										"\nWork Type: "+fr1_2.getWorkType()+
 										"\nDescription: "+fr1_2.getDescription()+
-										"  Reason: "+fr1_2.getReason()+
+										"\nReason: "+fr1_2.getReason()+
 										"\nStatus: "+fr1_2.getStatus()+
 										"\nComment: "+fr1_2.getComment());
 								// Ensure Supervisor selects a valid requestID
@@ -621,11 +621,11 @@ public class FlexISConsole {
 					
 					// Supervisor selects a date by option
 					while(true) {
-						System.out.println("List of available dates"
-											+ "\n1. 2023-02-05"
-											+ "\n2. 2023-02-07"
-											+ "\n3. 2023-02-09"
-											+ "\n4. 2023-02-11");
+						System.out.println("List of available dates"+
+											"\n1."+ds1.getDate()+
+											"\n2."+ds2.getDate()+
+											"\n3."+ds3.getDate()+
+											"\n4."+ds4.getDate());
 						System.out.print("Select a Date (by option): ");
 						date = sc.nextLine();
 						if(date.isEmpty() )
@@ -641,8 +641,9 @@ public class FlexISConsole {
 											+ "\nE400 - John");
 						System.out.print("\nSelect an employee ID: ");
 						employeeID = sc.nextLine();
-						if(employeeID.isEmpty())
+						if(employeeID.isEmpty()) {
 							System.out.println("Invalid employee ID");
+						}
 						
 						else if("E100".equalsIgnoreCase(employeeID)) {
 							System.out.println("Work location: "+ds1.getWorkLocation()+
@@ -680,6 +681,7 @@ public class FlexISConsole {
 					
 				// Option 7: Display Employee details
 				case 7:
+					f.displayEmployeeInfo();
 					break;
 				
 				// Option 8: Display daily schedule details
