@@ -29,7 +29,8 @@ private String requestID;
 	public FWARequest(
 			String requestID, 
 			String requestDate, 
-			String workType, 
+			String workType,
+			String description,
 			String reason,  
 			String status,  
 			String comment
