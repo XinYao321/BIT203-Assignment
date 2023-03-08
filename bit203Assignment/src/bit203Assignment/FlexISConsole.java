@@ -52,6 +52,7 @@ public class FlexISConsole {
 			String employeeID, password, name,position, email, FWAStatus;
 			String date, workLocation, workHours, workReport, supervisorComments;
 			String requestID, requestDate, workType, description, reason, status, comment;
+			String deptID;
 			// HR Admin object
 			HRAdmin hr = new HRAdmin("HR100","IamNicholas","Nicholas","HRAdmin","nicholaszz@gmail.com","-");
 			
@@ -133,21 +134,21 @@ public class FlexISConsole {
 					// Department validation
 					while(true) {
 						System.out.print("\nSelect a department: ");
-						String deptID = sc.nextLine();
+						deptID = sc.nextLine();
 						if("A0001".equalsIgnoreCase(deptID)) {
-							System.out.println(d1.getDeptName());
+							System.out.println("Department: "+d1.getDeptName());
 							break;
 							}
 						else if("HR0001".equalsIgnoreCase(deptID)) {
-							System.out.println(d2.getDeptName());
+							System.out.println("Department: "+d2.getDeptName());
 							break;
 						}
 						else if("PR0001".equalsIgnoreCase(deptID)) {
-							System.out.println(d3.getDeptName());
+							System.out.println("Department: "+d3.getDeptName());
 							break;
 						}
 						else if("IT0001".equalsIgnoreCase(deptID)) {
-							System.out.println(d4.getDeptName());
+							System.out.println("Department: "+d4.getDeptName());
 							break;
 						}
 						}
