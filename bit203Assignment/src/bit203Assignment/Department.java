@@ -9,8 +9,7 @@ import java.util.*;
 */
 public class Department {
 	private String deptID, deptName; // Department attributes
-	private ArrayList<Employee> employee; // Employee object
-	
+	private ArrayList<Employee> employee= new ArrayList<Employee>(); // Employee object
 	
 	// Constructor
 	public Department(String deptID, String deptName) {

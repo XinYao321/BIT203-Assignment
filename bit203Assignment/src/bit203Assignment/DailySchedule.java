@@ -29,7 +29,8 @@ public class DailySchedule {
 		setWorkReport(workReport);
 		setSupervisorComments(supervisorComments);
 	}
-
+	
+	// Getters and Setters method
 	public String getDate() {
 		return date;
 	}

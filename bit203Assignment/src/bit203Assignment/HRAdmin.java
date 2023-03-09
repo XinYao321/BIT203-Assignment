@@ -11,7 +11,7 @@ package bit203Assignment;
  * */
 public class HRAdmin extends Employee{
 	
-	private String employeeID, password, name, position, email;
+	private String employeeID, password, name, position, email, FWAStatus;
 	
 	public HRAdmin() {
 		setEmployeeID(employeeID);
@@ -71,6 +71,14 @@ public class HRAdmin extends Employee{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getFWAStatus() {
+		return FWAStatus;
+	}
+	
+	public void setFWAStatus(String FWAStatus) {
+		this.FWAStatus = FWAStatus;
 	}
 	
 	//toString() method

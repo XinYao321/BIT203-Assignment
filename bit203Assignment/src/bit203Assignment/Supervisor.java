@@ -13,6 +13,12 @@ public class Supervisor extends Employee{
 	private String employeeID, password, name, position, email, FWAStatus;
 	private ArrayList<Employee> employee;
 	
+	// Employee objects
+	Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");
+    Employee em2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","Hybrid");
+    Employee em3 = new Employee("E300","IamSara","Sara","Assistant Manager","sara578@gmail.com","Flexi-hours");
+    Employee em4 = new Employee("E400","IamJohn","John","Software developer","johnwong88@gmail.com","Work-from-home");
+	
 	public Supervisor() {
 		setEmployeeID(employeeID);
 		setPassword(password);
@@ -70,6 +76,14 @@ public class Supervisor extends Employee{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getFWAStatus() {
+		return FWAStatus;
+	}
+	
+	public void setFWAStatus(String FWAStatus) {
+		this.FWAStatus = FWAStatus;
 	}
 	
 	// toString() method
