@@ -16,7 +16,7 @@ package bit203Assignment;
 public class Employee {
 	// Attributes
 	private String employeeID, password, name, position, email, FWAStatus;
-	private String deptID, deptName;
+	private Department deptID, deptName;
 	
 	public Employee() {
 		setEmployeeID(employeeID);
@@ -39,7 +39,7 @@ public class Employee {
 		setFWAStatus(FWAStatus);
 		}
 	
-	/*Getters and Setters*/
+	//Getters and Setters
 	public String getEmployeeID() {
 		return employeeID;
 	}
@@ -87,7 +87,22 @@ public class Employee {
 	public void setFWAStatus(String fWAStatus) {
 		FWAStatus = fWAStatus;
 	}
+	
+	public Department getDeptID() {
+		return deptID;
+	}
 
+	public void setDeptID(Department deptID) {
+		this.deptID = deptID;
+	}
+
+	public Department getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(Department deptName) {
+		this.deptName = deptName;
+	}
 	
 	/*toString() method*/
 	public String toString() {
@@ -109,4 +124,6 @@ public class Employee {
 		}
 		return false;
 	}
+
+	
 }
