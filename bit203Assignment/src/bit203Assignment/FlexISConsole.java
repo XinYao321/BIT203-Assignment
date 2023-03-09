@@ -243,12 +243,12 @@ public class FlexISConsole {
 
 					// work type validation
 					while(true) {
-						System.out.print("\n1. Flexi-hour\n"
+						System.out.print("\n1. Flexi-hours\n"
 										+ "2. Work-from-home\n"
 										+ "3. Hybrid");
 						System.out.print("\nEnter work type: ");
 						workType = sc.nextLine();
-						if("Flexi-hour".equalsIgnoreCase(workType)|| "Work-from-home".equalsIgnoreCase(workType)|| 
+						if("Flexi-hours".equalsIgnoreCase(workType)|| "Work-from-home".equalsIgnoreCase(workType)|| 
 							"Hybrid".equalsIgnoreCase(workType)) 
 							break;
 					}
