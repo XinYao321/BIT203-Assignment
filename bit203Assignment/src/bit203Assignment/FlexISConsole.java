@@ -56,6 +56,15 @@ public class FlexISConsole {
 			// HR Admin object
 			HRAdmin hr = new HRAdmin("HR100","IamNicholas","Nicholas","HRAdmin","nicholaszz@gmail.com","-");
 			
+			// Supervisor object
+			Supervisor sp = new Supervisor("S100","Ali","IamAli","Supervisor","AlinFAVOR@gmail.com","-");
+			
+			// Employee object
+			Employee em1 = new Employee("E100","IamAdam","Adam","Employee","AtomnEve@gmail.com","Work-from-home");
+			Employee em2 = new Employee("E200","IamLucas","Lucas","Employee","Lucintuit@gmail.com","Hybrid");
+			Employee em3 = new Employee("E300","IamSara","Sara","Employee","SaraW32@gmail.com","Flexi-hours");
+			Employee em4 = new Employee("E400","IamJohn","John","Employee","JJJ3@gmail.com","Work-from-home");
+			
 			// Welcome message
 			System.out.println("Welcome to FlexIS System");
 			System.out.println();
@@ -698,4 +707,8 @@ public class FlexISConsole {
 			}
 		}		
 }
+	private static String toString(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
