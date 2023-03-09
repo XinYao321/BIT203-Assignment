@@ -115,7 +115,7 @@ public class FlexISConsole {
 									+ "\n8. Display daily schedules details");
 					break;
 					}
-				// Existing employees login with valid employee and password
+				// Registered employees login with valid employee and password
 				else if(("E100".equalsIgnoreCase(employeeID) && "IamAdam".equalsIgnoreCase(password))|| 
 						("E200".equalsIgnoreCase(employeeID) && "IamLucas".equalsIgnoreCase(password)) || 
 						("E300".equalsIgnoreCase(employeeID) && "IamSara".equalsIgnoreCase(password))|| 
@@ -221,7 +221,7 @@ public class FlexISConsole {
 						else
 							System.out.println("Invalid supervisor ID");
 					}
-					System.out.println("Supervisor "+sp.getName()+"has been recorded.");
+					System.out.println("Supervisor "+sp.getName()+" has been recorded for employee "+name);
 					break;
 						
 				// Option 2 - Submit FWA Request
@@ -717,7 +717,7 @@ public class FlexISConsole {
 			
 			// If user wants to exit program
 			while(choice == 0) {
-				System.out.println("--------The End--------");
+				System.out.println("----------------The End----------------");
 				break;
 			}
 		}		
