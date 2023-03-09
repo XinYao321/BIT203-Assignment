@@ -1,13 +1,15 @@
 package bit203Assignment;
 import java.util.*;
-// Supervisor subclass
+/*Supervisor class
+ * Subclass of Employee class
+ * It inherits all attributes and methods from Employee class
+ * It contains constructor, getters and setters method, and toString() method*/
 
 /*@author:
  * Sebastian Chai B2000080
  * Lee Xin Yao B2100617
  * */
 public class Supervisor extends Employee{
-	Scanner sc = new Scanner(System.in);
 	private String employeeID, password, name, position, email, FWAStatus;
 	private ArrayList<Employee> employee;
 	
@@ -70,6 +72,7 @@ public class Supervisor extends Employee{
 		this.email = email;
 	}
 	
+	// toString() method
 	public String toString() {
 		return ("Supervisor's details \n"+super.toString());
 	}

@@ -10,7 +10,7 @@ package bit203Assignment;
  */
 
 public class DailySchedule {
-	private String date, workLocation, workHours, workReport, supervisorComments;
+	private String date, workLocation, workHours, workReport, supervisorComments; //Attributes
 	
 	
 	public DailySchedule() {
@@ -70,6 +70,7 @@ public class DailySchedule {
 		this.supervisorComments = supervisorComments;
 	}
 	
+	// toString() method
 	public String toString() {
 		return ("Date: "+ getDate()
 				+ "\nWork location: "+ getWorkLocation()

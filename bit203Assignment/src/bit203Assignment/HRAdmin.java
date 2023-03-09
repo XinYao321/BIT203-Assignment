@@ -2,7 +2,8 @@ package bit203Assignment;
 
 /*HR Admin class
  * Subclass of Employee superclass
- * This class inherits all attributes and methods from Employee*/
+ * This class inherits all attributes and methods from Employee
+ * This class contains constructor, getters and setters method, and toString() method*/
 
 /*@author:
  * Sebastian Chai B2000080

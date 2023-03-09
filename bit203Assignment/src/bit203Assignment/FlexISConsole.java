@@ -213,8 +213,8 @@ public class FlexISConsole {
 					// Set request date to system date
 					while(true) {
 						System.out.print("\nToday's date (yyyy-MM-dd): ");
-						requestDate = new SimpleDateFormat("yyyy_MM_dd").format(Calendar.getInstance().getTime());
-							break;
+						requestDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+						break;
 					}
 
 					// work type validation

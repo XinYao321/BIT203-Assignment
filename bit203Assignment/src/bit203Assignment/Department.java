@@ -37,7 +37,8 @@ public class Department {
 	
 	// toString() method
 	public String toString() {
-		return (getDeptID()+": "+getDeptName());
+		return ("Department ID: "+getDeptID()
+				+"\nDepartment name: "+getDeptName());
 	}
 	
 }
