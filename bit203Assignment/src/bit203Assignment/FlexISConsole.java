@@ -19,7 +19,6 @@ import java.text.SimpleDateFormat;
 public class FlexISConsole {
 	public static void main(String[] args) {
 		
-		Employee e = new Employee();
 		FlexIS f = new FlexIS();
 		ArrayList<Department> department;
 		
@@ -34,10 +33,10 @@ public class FlexISConsole {
 		FWARequest fr4_2 = new FWARequest("R008","2023-03-08", "Work-from-home", "Can set for 3 days?", "Not feeling well", "Pending", "");
 		
 		// DailySchedule objects for update and review purposes
-		DailySchedule ds1 = new DailySchedule("2023-02-05", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
-		DailySchedule ds2 = new DailySchedule("2023-02-07", "At my house", "9am-5pm", "I will be working at my house","");
-		DailySchedule ds3 = new DailySchedule("2023-02-09", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
-		DailySchedule ds4 = new DailySchedule("2023-02-11", "At home", "8am-4pm", "I will be preparing the presentation slides","");
+		DailySchedule ds1 = new DailySchedule("2023-03-13", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
+		DailySchedule ds2 = new DailySchedule("2023-03-15", "At my house", "9am-5pm", "I will be working at my house","");
+		DailySchedule ds3 = new DailySchedule("2023-03-18", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
+		DailySchedule ds4 = new DailySchedule("2023-03-25", "At home", "8am-4pm", "I will be preparing the presentation slides","");
 		
 		// Deoartment objects
 		Department d1 = new Department("A0001","Accounting");
@@ -57,13 +56,13 @@ public class FlexISConsole {
 			HRAdmin hr = new HRAdmin("HR100","IamNicholas","Nicholas","HRAdmin","nicholaszz@gmail.com","-");
 			
 			// Supervisor object
-			Supervisor sp = new Supervisor("S100","Ali","IamAli","Supervisor","AlinFAVOR@gmail.com","-");
+			Supervisor sp = new Supervisor("S100","IamAli","Ali","Supervisor","alimuhamad@gmail.com","-");
 			
 			// Employee object
-			Employee em1 = new Employee("E100","IamAdam","Adam","Employee","AtomnEve@gmail.com","Work-from-home");
-			Employee em2 = new Employee("E200","IamLucas","Lucas","Employee","Lucintuit@gmail.com","Hybrid");
-			Employee em3 = new Employee("E300","IamSara","Sara","Employee","SaraW32@gmail.com","Flexi-hours");
-			Employee em4 = new Employee("E400","IamJohn","John","Employee","JJJ3@gmail.com","Work-from-home");
+			Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");
+			Employee em2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","Hybrid");
+			Employee em3 = new Employee("E300","IamSara","Sara","Assistant Manager","sara578@gmail.com","Flexi-hours");
+			Employee em4 = new Employee("E400","IamJohn","John","Software developer","johnwong88@gmail.com","Work-from-home");
 			
 			// Welcome message
 			System.out.println("Welcome to FlexIS System");
@@ -132,6 +131,7 @@ public class FlexISConsole {
 			
 			// do-while loop
 			do {
+				// Prompt user to enter their option
 				System.out.print("Enter your choice: ");
 				choice = sc.nextInt();
 				sc.nextLine();
@@ -145,18 +145,22 @@ public class FlexISConsole {
 						System.out.print("\nSelect a department: ");
 						deptID = sc.nextLine();
 						if("A0001".equalsIgnoreCase(deptID)) {
+							// Department name is shown
 							System.out.println("Department: "+d1.getDeptName());
 							break;
 							}
 						else if("HR0001".equalsIgnoreCase(deptID)) {
+							// Department name is shown
 							System.out.println("Department: "+d2.getDeptName());
 							break;
 						}
 						else if("PR0001".equalsIgnoreCase(deptID)) {
+							// Department name is shown
 							System.out.println("Department: "+d3.getDeptName());
 							break;
 						}
 						else if("IT0001".equalsIgnoreCase(deptID)) {
+							// Department name is shown
 							System.out.println("Department: "+d4.getDeptName());
 							break;
 						}
@@ -203,10 +207,21 @@ public class FlexISConsole {
 					}
 					
 					System.out.println("Employee "+name+" has been registered.");
-					
 					System.out.println("Email has been sent to "+ email);
 					System.out.println();
 					System.out.println("Employee's FWA Status: New");
+					
+					// SupervisorID validation
+					while(true) {
+						System.out.print("Enter supervisor ID:");
+						employeeID =sc.nextLine();	
+						if("S100".equalsIgnoreCase(employeeID)) {
+							break;
+							}
+						else
+							System.out.println("Invalid supervisor ID");
+					}
+					System.out.println("Supervisor "+sp.getName()+"has been recorded.");
 					break;
 						
 				// Option 2 - Submit FWA Request
