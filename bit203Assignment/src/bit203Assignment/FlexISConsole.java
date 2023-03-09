@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 public class FlexISConsole {
 	public static void main(String[] args) {
 		
+		Employee e = new Employee();
 		FlexIS f = new FlexIS();
 		ArrayList<Department> department;
 		
@@ -44,11 +45,6 @@ public class FlexISConsole {
 		Department d3 = new Department("PR0001","Public Relation");
 		Department d4 = new Department("IT0001","IT");
 		
-		Employee e1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","pending");
-		Employee e2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","pending");
-		Employee e3 = new Employee("E300","IamSara","Sara","Assistant Manager","sara578@gmail.com","pending");
-		Employee e4 = new Employee("E400","IamJohn","John","Software Developer","johnwong88@gmail.com","pending");
-		Supervisor e5 = new Supervisor("S100","IamAli","Ali","Supervisor","alimuhamad@gmail.com","-");
 		
 		try (Scanner sc = new Scanner(System.in)) {
 			int choice = 0;
@@ -301,7 +297,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_1.getRequestDate()+
 										"\nWork Type: "+fr1_1.getWorkType()+
 										"\nDescription: "+fr1_1.getDescription()+
-										"\nReason: "+fr1_1.getReason()+
+										"  Reason: "+fr1_1.getReason()+
 										"\nStatus: "+fr1_1.getStatus()+
 										"\nComment: "+fr1_1.getComment());
 								
@@ -309,11 +305,11 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_2.getRequestDate()+
 										"\nWork Type: "+fr1_2.getWorkType()+
 										"\nDescription: "+fr1_2.getDescription()+
-										"\nReason: "+fr1_2.getReason()+
+										"  Reason: "+fr1_2.getReason()+
 										"\nStatus: "+fr1_2.getStatus()+
 										"\nComment: "+fr1_2.getComment());
 								// Ensure Supervisor selects a valid requestID
-								System.out.print("Enter Request ID: ");
+								System.out.println("Enter Request ID: ");
 								requestID = sc.nextLine();
 								 if
 									("R001".equalsIgnoreCase(requestID)) 
@@ -321,20 +317,14 @@ public class FlexISConsole {
 									// Determine if status is set to "Pending"
 									 if (fr1_1.getStatus()=="Pending")
 									 {
-										 System.out.print("Accepted or Rejected?: ");
+										 System.out.println("Accepted or Rejected?: ");
 										 status = sc.nextLine();
 											if(status.isEmpty())
 												System.out.println("Invalid status.");
-											else if("Accepted".equalsIgnoreCase(status)) {
-												e1.setFWAStatus("Work-from-home"); // Set employee status to their requested work type
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
 												System.out.print("\nEnter your comment: ");
 												comment = sc.nextLine();
 												break;
-												}
-											else if("Rejected".equalsIgnoreCase(status)) {
-												break;}
-											System.out.print("\nEnter your comment: ");
-											comment = sc.nextLine();
 									 }
 									 else
 									 {
@@ -348,20 +338,14 @@ public class FlexISConsole {
 								{
 								 if (fr1_2.getStatus()=="Pending")
 								 {
-									 System.out.print("Accepted or Rejected?: ");
+									 System.out.println("Accepted or Rejected?: ");
 									 status = sc.nextLine();
 										if(status.isEmpty())
 											System.out.println("Invalid status.");
-										else if("Accepted".equalsIgnoreCase(status)) {
-											e1.setFWAStatus("Flexi-hour"); // Set employee status to their requested work type
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
 											System.out.print("\nEnter your comment: ");
 											comment = sc.nextLine();
 											break;
-											}
-										else if("Rejected".equalsIgnoreCase(status)) {
-											break;}
-										System.out.print("\nEnter your comment: ");
-										comment = sc.nextLine();
 								 }
 								 else
 								 {
@@ -381,7 +365,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_1.getRequestDate()+
 										"\nWork Type: "+fr2_1.getWorkType()+
 										"\nDescription: "+fr2_1.getDescription()+
-										"\nReason: "+fr2_1.getReason()+
+										"  Reason: "+fr2_1.getReason()+
 										"\nStatus: "+fr2_1.getStatus()+
 										"\nComment: "+fr2_1.getComment());
 								
@@ -389,11 +373,11 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_2.getRequestDate()+
 										"\nWork Type: "+fr2_2.getWorkType()+
 										"\nDescription: "+fr2_2.getDescription()+
-										"\nReason: "+fr2_2.getReason()+
+										"  Reason: "+fr2_2.getReason()+
 										"\nStatus: "+fr2_2.getStatus()+
 										"\nComment: "+fr2_2.getComment());
 								// Ensure Supervisor selects a valid requestID
-								System.out.print("Enter Request ID: ");
+								System.out.println("Enter Request ID: ");
 								requestID = sc.nextLine();
 								if (requestID.isEmpty())
 									System.out.println("Invalid Request ID.");
@@ -404,20 +388,14 @@ public class FlexISConsole {
 
 									 if (fr2_1.getStatus()=="Pending")
 									 {
-										 System.out.print("Accepted or Rejected?: ");
+										 System.out.println("Accepted or Rejected?: ");
 										 status = sc.nextLine();
 											if(status.isEmpty())
 												System.out.println("Invalid status.");
-											else if("Accepted".equalsIgnoreCase(status)) {
-												e2.setFWAStatus("Hybrid"); // Set employee status to their requested work type
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
 												System.out.print("\nEnter your comment: ");
 												comment = sc.nextLine();
 												break;
-												}
-											else if("Rejected".equalsIgnoreCase(status)) {
-												break;}
-											System.out.print("\nEnter your comment: ");
-											comment = sc.nextLine();
 									 }
 									 else
 									 {
@@ -431,20 +409,14 @@ public class FlexISConsole {
 								{
 								 if (fr2_2.getStatus()=="Pending")
 								 {
-									 System.out.print("Accepted or Rejected?: ");
+									 System.out.println("Accepted or Rejected?: ");
 									 status = sc.nextLine();
 										if(status.isEmpty())
 											System.out.println("Invalid status.");
-										else if("Accepted".equalsIgnoreCase(status)) {
-											e2.setFWAStatus("Hybrid"); // Set employee status to their requested work type
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
 											System.out.print("\nEnter your comment: ");
 											comment = sc.nextLine();
 											break;
-											}
-										else if("Rejected".equalsIgnoreCase(status)) {
-											break;}
-										System.out.print("\nEnter your comment: ");
-										comment = sc.nextLine();
 								 }
 								 else
 								 {
@@ -464,7 +436,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_1.getRequestDate()+
 										"\nWork Type: "+fr3_1.getWorkType()+
 										"\nDescription: "+fr3_1.getDescription()+
-										"\nReason: "+fr3_1.getReason()+
+										"  Reason: "+fr3_1.getReason()+
 										"\nStatus: "+fr3_1.getStatus()+
 										"\nComment: "+fr3_1.getComment());
 								
@@ -472,11 +444,11 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_2.getRequestDate()+
 										"\nWork Type: "+fr3_2.getWorkType()+
 										"\nDescription: "+fr3_2.getDescription()+
-										"\nReason: "+fr3_2.getReason()+
+										"  Reason: "+fr3_2.getReason()+
 										"\nStatus: "+fr3_2.getStatus()+
 										"\nComment: "+fr3_2.getComment());
 								// Ensure Supervisor selects a valid requestID
-								System.out.print("Enter Request ID: ");
+								System.out.println("Enter Request ID: ");
 								requestID = sc.nextLine();
 								if (requestID.isEmpty())
 									System.out.println("Invalid Request ID.");
@@ -486,20 +458,14 @@ public class FlexISConsole {
 								{
 									 if (fr3_1.getStatus()=="Pending")
 									 {
-										 System.out.print("Accepted or Rejected?: ");
+										 System.out.println("Accepted or Rejected?: ");
 										 status = sc.nextLine();
 											if(status.isEmpty())
 												System.out.println("Invalid status.");
-											else if("Accepted".equalsIgnoreCase(status)) {
-												e3.setFWAStatus("Work-from-home"); // Set employee status to their requested work type
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
 												System.out.print("\nEnter your comment: ");
 												comment = sc.nextLine();
 												break;
-												}
-											else if("Rejected".equalsIgnoreCase(status)) {
-												break;}
-											System.out.print("\nEnter your comment: ");
-											comment = sc.nextLine();
 									 }
 									 else
 									 {
@@ -513,20 +479,14 @@ public class FlexISConsole {
 								{
 								 if (fr3_2.getStatus()=="Pending")
 								 {
-									 System.out.print("Accepted or Rejected?: ");
+									 System.out.println("Accepted or Rejected?: ");
 									 status = sc.nextLine();
-									 if(status.isEmpty())
-										 System.out.println("Invalid status.");
-									 else if("Accepted".equalsIgnoreCase(status)) {
-										 e3.setFWAStatus("Hybrid"); // Set employee status to their requested work type
-										 System.out.print("\nEnter your comment: ");
-										 comment = sc.nextLine();
-										 break;
-											}
-									 else if("Rejected".equalsIgnoreCase(status)) {
-										 break;}
-									 System.out.print("\nEnter your comment: ");
-									 comment = sc.nextLine();
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
 								 }
 								 else
 								 {
@@ -546,7 +506,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_1.getRequestDate()+
 										"\nWork Type: "+fr4_1.getWorkType()+
 										"\nDescription: "+fr4_1.getDescription()+
-										"\nReason: "+fr4_1.getReason()+
+										"  Reason: "+fr4_1.getReason()+
 										"\nStatus: "+fr4_1.getStatus()+
 										"\nComment: "+fr4_1.getComment());
 								
@@ -554,11 +514,11 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_2.getRequestDate()+
 										"\nWork Type: "+fr4_2.getWorkType()+
 										"\nDescription: "+fr4_2.getDescription()+
-										"\nReason: "+fr4_2.getReason()+
+										"  Reason: "+fr4_2.getReason()+
 										"\nStatus: "+fr4_2.getStatus()+
 										"\nComment: "+fr4_2.getComment());
 								// Ensure Supervisor selects a valid requestID
-								System.out.print("Enter Request ID: ");
+								System.out.println("Enter Request ID: ");
 								requestID = sc.nextLine();
 								if (requestID.isEmpty())
 									System.out.println("Invalid Request ID.");
@@ -568,21 +528,15 @@ public class FlexISConsole {
 									// Determine if status is set to "Pending"
 									 if (fr4_1.getStatus()=="Pending")
 									 {
-										 System.out.print("Accepted or Rejected?: ");
+										 System.out.println("Accepted or Rejected?: ");
 										 status = sc.nextLine();
-										 if(status.isEmpty())
-											 System.out.println("Invalid status.");
-										 else if("Accepted".equalsIgnoreCase(status)) {
-											 e2.setFWAStatus("Hybrid"); // Set employee status to their requested work type
-											 System.out.print("\nEnter your comment: ");
-											 comment = sc.nextLine();
-											 break;
-											 }
-										 else if("Rejected".equalsIgnoreCase(status)) {
-											 break;}
-										 System.out.print("\nEnter your comment: ");
-										 comment = sc.nextLine();
-										 }
+											if(status.isEmpty())
+												System.out.println("Invalid status.");
+											else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+												System.out.print("\nEnter your comment: ");
+												comment = sc.nextLine();
+												break;
+									 }
 									 else
 									 {
 										 System.out.println("Status is not pending");
@@ -595,22 +549,14 @@ public class FlexISConsole {
 								{
 								 if (fr4_2.getStatus()=="Pending")
 								 {
-									 System.out.print("Accepted or Rejected?: ");
+									 System.out.println("Accepted or Rejected?: ");
 									 status = sc.nextLine();
-									 if(status.isEmpty())
-										 System.out.println("Invalid status.");
-									 else if("Accepted".equalsIgnoreCase(status)) {
-										 e2.setFWAStatus("Work-from-home"); // Set employee status to their requested work type
-										 System.out.print("\nEnter your comment: ");
-										 comment = sc.nextLine();
-										 break;
-										 }
-									 else if("Rejected".equalsIgnoreCase(status)) {
-										 break;}
-									 System.out.print("\nEnter your comment: ");
-									 comment = sc.nextLine();
-									 
-									 
+										if(status.isEmpty())
+											System.out.println("Invalid status.");
+										else if("Accepted".equalsIgnoreCase(status)|| "Rejected".equalsIgnoreCase(status)) 
+											System.out.print("\nEnter your comment: ");
+											comment = sc.nextLine();
+											break;
 								 }
 								 else
 								 {
