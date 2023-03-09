@@ -41,6 +41,7 @@ public class FlexIS {
 		employee.add(e4);
 		employee.add(e5);
 		
+		// Lambda expression to display all employees
 		employee.forEach(e->
 		{System.out.println(e);
 		});
