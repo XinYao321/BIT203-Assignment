@@ -8,13 +8,24 @@ import java.util.*;
 
 
 public class FlexIS {
+	
+	private String employeeID, deptID;
 	/*Employee and Department collections*/
 	private static ArrayList<Employee> employee = new ArrayList<>();	
 	private static ArrayList<Department> department = new ArrayList<>();	
 	
-	static Scanner sc = new Scanner(System.in);
+	// Department objects
+	Department d1 = new Department("A0001","Accounting");
+	Department d2 = new Department("HR0001","Human Resource");
+	Department d3 = new Department("PR0001","Public Relation");
+	Department d4 = new Department("IT0001","IT");
 	
-	public FlexIS() {}
+	// Constructor
+	public FlexIS() {
+		setEmployeeID(employeeID);
+		setDeptID(deptID);
+		
+	}
 	
 	// Display every employee's details sorted by name
 	public void displayEmployeeInfo() {
@@ -35,16 +46,33 @@ public class FlexIS {
 		});
 	}
 	
+	// return size of Employee
 	public int EmployeeSize() {
 		return employee.size();
 	}
 	
-	public static void displayDailyScheduleInfo() {}
+	// return size of Department
+	public int DepartmentSize() {
+		return department.size();
+	}
 	
-	public static void sortEmployee() {}
-	
-	public static void sortDepartment() {}
+	// Getters and Setters
+	public String getEmployeeID() {
+		return employeeID;
+	}
 
+	public void setEmployeeID(String employeeID) {
+		this.employeeID = employeeID;
+	}
+
+	public String getDeptID() {
+		return deptID;
+	}
+
+	public void setDeptID(String deptID) {
+		this.deptID = deptID;
+	}
+	
 	
 	//public String toString() {}
 	

@@ -1,5 +1,5 @@
 package bit203Assignment;
-//import bit203Assignment.FlexIS;
+import bit203Assignment.FlexIS;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
  * It will display a menu program for users
  * User must login before selecting an option*
  * Prior to the display of menu:
- * A FlexIS object, Department collection, and HRAdmin object is created/
+ * A FlexIS object, Department collection,HRAdmin object, FWARequest, DailySchedule objects are created/
 
 /*@authors:
  * Sebastian Chai B2000080
@@ -19,8 +19,8 @@ import java.text.SimpleDateFormat;
 public class FlexISConsole {
 	public static void main(String[] args) {
 		
-		FlexIS f = new FlexIS();
-		ArrayList<Department> department;
+		FlexIS f = new FlexIS(); // FlexIS object
+		ArrayList<Department> department= new ArrayList<>();
 		
 		// FWARequest objects for review
 		FWARequest fr1_1 = new FWARequest("R001","2023-03-01", "Work-from-home", "Can set for 3 days?", "Not well", "Accepted", "Understood, take care");
@@ -38,7 +38,7 @@ public class FlexISConsole {
 		DailySchedule ds3 = new DailySchedule("2023-03-18", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
 		DailySchedule ds4 = new DailySchedule("2023-03-25", "At home", "8am-4pm", "I will be preparing the presentation slides","");
 		
-		// Deoartment objects
+		// Department objects
 		Department d1 = new Department("A0001","Accounting");
 		Department d2 = new Department("HR0001","Human Resource");
 		Department d3 = new Department("PR0001","Public Relation");
@@ -115,7 +115,7 @@ public class FlexISConsole {
 									+ "\n8. Display daily schedules details");
 					break;
 					}
-				// Existing employees login with valid employee and password
+				// Registered employees login with valid employee and password
 				else if(("E100".equalsIgnoreCase(employeeID) && "IamAdam".equalsIgnoreCase(password))|| 
 						("E200".equalsIgnoreCase(employeeID) && "IamLucas".equalsIgnoreCase(password)) || 
 						("E300".equalsIgnoreCase(employeeID) && "IamSara".equalsIgnoreCase(password))|| 
@@ -206,9 +206,9 @@ public class FlexISConsole {
 							break;}
 					}
 					
+					System.out.println();
 					System.out.println("Employee "+name+" has been registered.");
 					System.out.println("Email has been sent to "+ email);
-					System.out.println();
 					System.out.println("Employee's FWA Status: New");
 					
 					// SupervisorID validation
@@ -221,7 +221,8 @@ public class FlexISConsole {
 						else
 							System.out.println("Invalid supervisor ID");
 					}
-					System.out.println("Supervisor "+sp.getName()+"has been recorded.");
+					// Supervisor name is shown and is recorded for the employee
+					System.out.println("Supervisor "+sp.getName()+" has been recorded for employee "+name);
 					break;
 						
 				// Option 2 - Submit FWA Request
@@ -641,7 +642,6 @@ public class FlexISConsole {
 				
 				// Option 5 - Review Employee Schedules
 				case 5:
-					
 					// Supervisor selects a date by option
 					while(true) {
 						System.out.println("List of available dates"+
@@ -700,7 +700,741 @@ public class FlexISConsole {
 				
 				// Option 6 - View FWA Analytics
 				case 6:
-					break;
+					int flexNum = 0;
+					int homeNum = 0;
+					int hybdNum = 0;
+					while(true) {
+						System.out.print("\n1. HRAdmin");
+						System.out.print("\n2. Supervisor");
+						System.out.print("\nEnter position: ");
+						position = sc.nextLine();
+						if("HRAdmin".equalsIgnoreCase(position)|| "Supervisor".equalsIgnoreCase(position))
+							break;
+						else
+							System.out.println("Invalid position");
+					}
+					
+						
+						// Detect if user is HR Admin
+						if ("HRAdmin".equalsIgnoreCase(position))
+						{
+							System.out.print("\nHR Admin View FWA Analytics page\n");
+							//count number of employees of each FWA Status in Accounting department
+							if (em1.getFWAStatus()=="Flexi-hours")
+							{
+								flexNum++;
+							}
+							else if (em1.getFWAStatus()=="Work-from-home")
+							{
+								homeNum++;
+							}
+							else if (em1.getFWAStatus()=="Hybrid")
+							{
+								hybdNum++;
+							}
+							//display count
+							System.out.println("A0001, Accounting: ");
+							System.out.println("Flexi-hours: "+flexNum);
+							System.out.println("Work-from-home: "+homeNum);
+							System.out.println("Hybrid: "+hybdNum);
+							
+							flexNum = 0;
+							homeNum = 0;
+							hybdNum = 0;
+							//count number of employees of each FWA Status in Human Resource department
+							if (em2.getFWAStatus()=="Flexi-hours")
+							{
+								flexNum++;
+							}
+							else if (em2.getFWAStatus()=="Work-from-home")
+							{
+								homeNum++;
+							}
+							else if (em2.getFWAStatus()=="Hybrid")
+							{
+								hybdNum++;
+							}
+							//display count
+							System.out.println("HR0001, Human Resource: ");
+							System.out.println("Flexi-hours: "+flexNum);
+							System.out.println("Work-from-home: "+homeNum);
+							System.out.println("Hybrid: "+hybdNum);
+							
+							flexNum = 0;
+							homeNum = 0;
+							hybdNum = 0;
+							//count number of employees of each FWA Status in Public Relation department
+							if (em3.getFWAStatus()=="Flexi-hours")
+							{
+								flexNum++;
+							}
+							else if (em3.getFWAStatus()=="Work-from-home")
+							{
+								homeNum++;
+							}
+							else if (em3.getFWAStatus()=="Hybrid")
+							{
+								hybdNum++;
+							}
+							//display count
+							System.out.println("PR0001, Public Relation: ");
+							System.out.println("Flexi-hours: "+flexNum);
+							System.out.println("Work-from-home: "+homeNum);
+							System.out.println("Hybrid: "+hybdNum);
+							
+							flexNum = 0;
+							homeNum = 0;
+							hybdNum = 0;
+							//count number of employees of each FWA Status in IT department
+							if (em4.getFWAStatus()=="Flexi-hours")
+							{
+								flexNum++;
+							}
+							else if (em4.getFWAStatus()=="Work-from-home")
+							{
+								homeNum++;
+							}
+							else if (em4.getFWAStatus()=="Hybrid")
+							{
+								hybdNum++;
+							}
+							//display count
+							System.out.println("IT0001, IT: ");
+							System.out.println("Flexi-hours: "+flexNum);
+							System.out.println("Work-from-home: "+homeNum);
+							System.out.println("Hybrid: "+hybdNum);
+							
+							flexNum = 0;
+							homeNum = 0;
+							hybdNum = 0;
+							int j = 0;
+							System.out.println("Insert department ID: ");
+							deptID = sc.nextLine();
+							
+							//Display dates, and count number of FWA Requests made on each date
+		
+							if ("A0001".equalsIgnoreCase(deptID))
+							{
+								if (fr1_1.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								System.out.println("2023-02-27: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								System.out.println("2023-02-28: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								System.out.println("2023-03-01: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								System.out.println("2023-03-02: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								System.out.println("2023-03-03: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								System.out.println("2023-03-04: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								System.out.println("2023-03-05: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								System.out.println("2023-03-06: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								System.out.println("2023-03-07: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								System.out.println("2023-03-08: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								if (fr1_2.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								System.out.println("2023-03-09: "+j);
+							}
+						
+							else if ("HR0001".equalsIgnoreCase(deptID))
+							{
+								if (fr2_1.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								System.out.println("2023-02-27: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								System.out.println("2023-02-28: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								System.out.println("2023-03-01: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								System.out.println("2023-03-02: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								System.out.println("2023-03-03: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								System.out.println("2023-03-04: "+j);
+								j=0;
+
+								if (fr2_1.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								System.out.println("2023-03-05: "+j);
+								j=0;
+								if (fr2_1.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								System.out.println("2023-03-06: "+j);
+								j=0;
+								if (fr2_1.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								System.out.println("2023-03-07: "+j);
+								j=0;
+								if (fr2_1.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								if (fr2_2.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								System.out.println("2023-03-08: "+j);
+								j=0;
+								if (fr2_1.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								if (fr2_2.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								System.out.println("2023-03-09: "+j);
+							}
+							else if ("PR0001".equalsIgnoreCase(deptID))
+							{
+								if (fr3_1.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								System.out.println("2023-02-27: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								System.out.println("2023-02-28: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								System.out.println("2023-03-01: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								System.out.println("2023-03-02: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								System.out.println("2023-03-03: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								System.out.println("2023-03-04: "+j);
+								j=0;
+
+								if (fr3_1.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								System.out.println("2023-03-05: "+j);
+								j=0;
+								if (fr3_1.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								System.out.println("2023-03-06: "+j);
+								j=0;
+								if (fr3_1.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								System.out.println("2023-03-07: "+j);
+								j=0;
+								if (fr3_1.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								if (fr3_2.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								System.out.println("2023-03-08: "+j);
+								j=0;
+								if (fr3_1.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								if (fr3_2.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								System.out.println("2023-03-09: "+j);
+							}
+							else if ("IT0001".equalsIgnoreCase(deptID))
+							{
+								if (fr4_1.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								System.out.println("2023-02-27: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								System.out.println("2023-02-28: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								System.out.println("2023-03-01: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								System.out.println("2023-03-02: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								System.out.println("2023-03-03: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								System.out.println("2023-03-04: "+j);
+								j=0;
+
+								if (fr4_1.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								System.out.println("2023-03-05: "+j);
+								j=0;
+								if (fr4_1.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								System.out.println("2023-03-06: "+j);
+								j=0;
+								if (fr4_1.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								System.out.println("2023-03-07: "+j);
+								j=0;
+								if (fr4_1.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								if (fr4_2.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								System.out.println("2023-03-08: "+j);
+								j=0;
+								if (fr4_1.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								if (fr4_2.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								System.out.println("2023-03-09: "+j);
+								j=0;
+							}
+							else
+								// validate department ID; if user enters invalid department ID or if department ID is empty
+							{
+								System.out.print("\nInvalid department ID");
+							}
+							
+						}
+						else if ("Supervisor".equalsIgnoreCase(position))
+						{
+							//count number of employees of each FWA Status in supervisor's department
+							System.out.print("\nHR Admin View FWA Analytics page\n");
+							if (em1.getFWAStatus()=="Flexi-hours")
+							{
+								flexNum++;
+							}
+							else if (em1.getFWAStatus()=="Work-from-home")
+							{
+								homeNum++;
+							}
+							else if (em1.getFWAStatus()=="Hybrid")
+							{
+								hybdNum++;
+							}
+							
+							System.out.println("A0001, Accounting: ");
+							System.out.println("Flexi-hours: "+flexNum);
+							System.out.println("Work-from-home: "+homeNum);
+							System.out.println("Hybrid: "+hybdNum);
+							int j=0;
+							
+							//Display dates, and count number of FWA Requests made on each date
+								if (fr1_1.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-02-27")
+										{
+											j++;
+										}
+								System.out.println("2023-02-27: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-02-28")
+										{
+											j++;
+										}
+								System.out.println("2023-02-28: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-01")
+										{
+											j++;
+										}
+								System.out.println("2023-03-01: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-02")
+										{
+											j++;
+										}
+								System.out.println("2023-03-02: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-03")
+										{
+											j++;
+										}
+								System.out.println("2023-03-03: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-04")
+										{
+											j++;
+										}
+								System.out.println("2023-03-04: "+j);
+								j=0;
+
+								if (fr1_1.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-05")
+										{
+											j++;
+										}
+								System.out.println("2023-03-05: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-06")
+										{
+											j++;
+										}
+								System.out.println("2023-03-06: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-07")
+										{
+											j++;
+										}
+								System.out.println("2023-03-07: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								if (fr1_2.getRequestDate()=="2023-03-08")
+										{
+											j++;
+										}
+								System.out.println("2023-03-08: "+j);
+								j=0;
+								if (fr1_1.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								if (fr1_2.getRequestDate()=="2023-03-09")
+								{
+									j++;
+								}
+								System.out.println("2023-03-09: "+j);
+						}
+						break;
 					
 				// Option 7: Display Employee details
 				case 7:
@@ -709,9 +1443,40 @@ public class FlexISConsole {
 				
 				// Option 8: Display daily schedule details
 				case 8:
+					System.out.println(	"\nDepartment ID: "+ d1.getDeptID()+
+									   	"\nEmployee Name: "+ em1.getName()+
+									   	"\nDate: "+ ds1.getDate()+
+									   	"\nWork Location: "+ ds1.getWorkLocation()+
+									   	"\nWork Hours: "+ ds1.getWorkHours()+
+									   	"\nWork Report: "+ ds1.getWorkReport()+
+									   	"\nSupervisor Comments: "+ ds1.getSupervisorComments()
+									   	);
+					System.out.println(	"\nDepartment ID: "+ d2.getDeptID()+
+							   			"\nEmployee Name: "+ em2.getName()+
+							   			"\nDate: "+ ds2.getDate()+
+							   			"\nWork Location: "+ ds2.getWorkLocation()+
+							   			"\nWork Hours: "+ ds2.getWorkHours()+
+							   			"\nWork Report: "+ ds2.getWorkReport()+
+							   			"\nSupervisor Comments: "+ ds2.getSupervisorComments()
+							   			);
+					System.out.println(	"\nDepartment ID: "+ d3.getDeptID()+
+				   						"\nEmployee Name: "+ em3.getName()+
+				   						"\nDate: "+ ds3.getDate()+
+							   			"\nWork Location: "+ ds3.getWorkLocation()+
+							   			"\nWork Hours: "+ ds3.getWorkHours()+
+							   			"\nWork Report: "+ ds3.getWorkReport()+
+							   			"\nSupervisor Comments: "+ ds3.getSupervisorComments()
+				   			);
+					System.out.println(	"\nDepartment ID: "+ d4.getDeptID()+
+							   			"\nEmployee Name: "+ em4.getName()+
+							   			"\nDate: "+ ds4.getDate()+
+							   			"\nWork Location: "+ ds4.getWorkLocation()+
+							   			"\nWork Hours: "+ ds4.getWorkHours()+
+							   			"\nWork Report: "+ ds4.getWorkReport()+
+							   			"\nSupervisor Comments: "+ ds4.getSupervisorComments()
+						   			);
 					break;
-					
-						}
+					}
 			} while(choice != 0);
 			
 			
