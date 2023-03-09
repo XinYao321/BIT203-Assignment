@@ -288,7 +288,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_1.getRequestDate()+
 										"\nWork Type: "+fr1_1.getWorkType()+
 										"\nDescription: "+fr1_1.getDescription()+
-										"\nReason: "+fr1_1.getReason()+
+										"  Reason: "+fr1_1.getReason()+
 										"\nStatus: "+fr1_1.getStatus()+
 										"\nComment: "+fr1_1.getComment());
 								
@@ -296,15 +296,13 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr1_2.getRequestDate()+
 										"\nWork Type: "+fr1_2.getWorkType()+
 										"\nDescription: "+fr1_2.getDescription()+
-										"\nReason: "+fr1_2.getReason()+
+										"  Reason: "+fr1_2.getReason()+
 										"\nStatus: "+fr1_2.getStatus()+
 										"\nComment: "+fr1_2.getComment());
 								// Ensure Supervisor selects a valid requestID
 								System.out.println("Enter Request ID: ");
 								requestID = sc.nextLine();
-								if (requestID.isEmpty())
-									System.out.println("Invalid Request ID.");
-								else if
+								 if
 									("R001".equalsIgnoreCase(requestID)) 
 								{
 									// Determine if status is set to "Pending"
@@ -358,7 +356,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_1.getRequestDate()+
 										"\nWork Type: "+fr2_1.getWorkType()+
 										"\nDescription: "+fr2_1.getDescription()+
-										"\nReason: "+fr2_1.getReason()+
+										"  Reason: "+fr2_1.getReason()+
 										"\nStatus: "+fr2_1.getStatus()+
 										"\nComment: "+fr2_1.getComment());
 								
@@ -366,7 +364,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr2_2.getRequestDate()+
 										"\nWork Type: "+fr2_2.getWorkType()+
 										"\nDescription: "+fr2_2.getDescription()+
-										"\nReason: "+fr2_2.getReason()+
+										"  Reason: "+fr2_2.getReason()+
 										"\nStatus: "+fr2_2.getStatus()+
 										"\nComment: "+fr2_2.getComment());
 								// Ensure Supervisor selects a valid requestID
@@ -429,7 +427,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_1.getRequestDate()+
 										"\nWork Type: "+fr3_1.getWorkType()+
 										"\nDescription: "+fr3_1.getDescription()+
-										"\nReason: "+fr3_1.getReason()+
+										"  Reason: "+fr3_1.getReason()+
 										"\nStatus: "+fr3_1.getStatus()+
 										"\nComment: "+fr3_1.getComment());
 								
@@ -437,7 +435,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr3_2.getRequestDate()+
 										"\nWork Type: "+fr3_2.getWorkType()+
 										"\nDescription: "+fr3_2.getDescription()+
-										"\nReason: "+fr3_2.getReason()+
+										"  Reason: "+fr3_2.getReason()+
 										"\nStatus: "+fr3_2.getStatus()+
 										"\nComment: "+fr3_2.getComment());
 								// Ensure Supervisor selects a valid requestID
@@ -499,7 +497,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_1.getRequestDate()+
 										"\nWork Type: "+fr4_1.getWorkType()+
 										"\nDescription: "+fr4_1.getDescription()+
-										"\nReason: "+fr4_1.getReason()+
+										"  Reason: "+fr4_1.getReason()+
 										"\nStatus: "+fr4_1.getStatus()+
 										"\nComment: "+fr4_1.getComment());
 								
@@ -507,7 +505,7 @@ public class FlexISConsole {
 										"\nRequest Date: "+fr4_2.getRequestDate()+
 										"\nWork Type: "+fr4_2.getWorkType()+
 										"\nDescription: "+fr4_2.getDescription()+
-										"\nReason: "+fr4_2.getReason()+
+										"  Reason: "+fr4_2.getReason()+
 										"\nStatus: "+fr4_2.getStatus()+
 										"\nComment: "+fr4_2.getComment());
 								// Ensure Supervisor selects a valid requestID
