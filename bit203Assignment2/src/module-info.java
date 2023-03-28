@@ -6,4 +6,5 @@
  *
  */
 module bit203Assignment2 {
+	requires java.desktop;
 }
