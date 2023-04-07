@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class DailyScheduleTablr extends JFrame {
+public class DailyScheduleTable extends JFrame {
 
 	private JPanel contentPane;
 
@@ -17,7 +17,7 @@ public class DailyScheduleTablr extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DailyScheduleTablr frame = new DailyScheduleTablr();
+					DailyScheduleTable frame = new DailyScheduleTable();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class DailyScheduleTablr extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DailyScheduleTablr() {
+	public DailyScheduleTable() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
