@@ -1,5 +1,6 @@
 package bit203Assignment2;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -95,53 +96,54 @@ public class SignIn extends JFrame {
 		contentPane.add(passwordField);
 		
 		// Sign In button
-				JButton signInBtn = new JButton("Sign In");
-				signInBtn.setFocusable(false);
-				signInBtn.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String employeeID = employeeIDTF.getText();
-						@SuppressWarnings("deprecation")
-						String password = passwordField.getText();
+		JButton signInBtn = new JButton("Sign In");
+		signInBtn.setForeground(Color.WHITE);
+		signInBtn.setBackground(Color.BLACK);
+		signInBtn.setFocusable(false);
+		signInBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String employeeID = employeeIDTF.getText();
+				@SuppressWarnings("deprecation")
+				String password = passwordField.getText();
+				// Input Validation for HR Admin
+				if(hr.getEmployeeID().equalsIgnoreCase(employeeID) && hr.getPassword().equalsIgnoreCase(password)) {
+					// Go to HR Admin dashboard
+					HRAdminDashboard hrAdmin= new HRAdminDashboard();
+					hrAdmin.setVisible(true);
+					}
 						
-						// Input Validation for HR Admin
-						if("HR100".equalsIgnoreCase(employeeID) && "IamNicholas".equalsIgnoreCase(password)) {
-							// Go to HR Admin dashboard
-							HRAdminDashboard hrAdmin= new HRAdminDashboard();
-							hrAdmin.setVisible(true);
+				// Input Validation for Supervisor
+				else if(sp.getEmployeeID().equalsIgnoreCase(employeeID) && sp.getPassword().equalsIgnoreCase(password)) {
+					// Navigate to supervisor dashboard
+					SupervisorDashboard supervisor = new SupervisorDashboard();
+					supervisor.setVisible(true);
 						}
 						
-						// Input Validation for Supervisor
-						else if(sp.getEmployeeID().equalsIgnoreCase(employeeID) && sp.getPassword().equalsIgnoreCase(password)) {
-							// Navigate to supervisor dashboard
-							SupervisorDashboard supervisor = new SupervisorDashboard();
-							supervisor.setVisible(true);
-						}
-						
-						// Input Validation for Employee
-						else if((em1.getEmployeeID().equalsIgnoreCase(employeeID) && em1.getPassword().equalsIgnoreCase(password)) || 
-								(em2.getEmployeeID().equalsIgnoreCase(employeeID)&& em2.getPassword().equalsIgnoreCase(password))||
-								(em3.getEmployeeID().equalsIgnoreCase(employeeID)&& em3.getPassword().equalsIgnoreCase(password))||
-								(em4.getEmployeeID().equalsIgnoreCase(employeeID)&& em4.getPassword().equalsIgnoreCase(password))) {
-							// Navigate to Employee dashboard
-							EmployeeDashboard employee = new EmployeeDashboard();
-							employee.setVisible(true);
+				// Input Validation for Employee
+				else if((em1.getEmployeeID().equalsIgnoreCase(employeeID) && em1.getPassword().equalsIgnoreCase(password)) || 
+						(em2.getEmployeeID().equalsIgnoreCase(employeeID)&& em2.getPassword().equalsIgnoreCase(password))||
+						(em3.getEmployeeID().equalsIgnoreCase(employeeID)&& em3.getPassword().equalsIgnoreCase(password))||
+						(em4.getEmployeeID().equalsIgnoreCase(employeeID)&& em4.getPassword().equalsIgnoreCase(password))) {
+					// Navigate to Employee dashboard
+					EmployeeDashboard employee = new EmployeeDashboard();
+					employee.setVisible(true);
 							
 						}
-						// If input fields are empty
-						else if(employeeID.isEmpty() || password.isEmpty()) {
-							JOptionPane.showMessageDialog(null, "Input fields cannot be empty", "ERROR", JOptionPane.ERROR_MESSAGE);;
+				// If input fields are empty
+				else if(employeeID.isEmpty() || password.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Input fields cannot be empty", "ERROR", JOptionPane.ERROR_MESSAGE);;
 						}
 						
-						// If users entered invalid employee ID or password
-						else {
-							JOptionPane.showMessageDialog(null, "Invalid employee ID or password", "ERROR", JOptionPane.ERROR_MESSAGE);;
-							employeeIDTF.setText("");
-							passwordField.setText("");
+				// If users entered invalid employee ID or password
+				else {
+					JOptionPane.showMessageDialog(null, "Invalid employee ID or password", "ERROR", JOptionPane.ERROR_MESSAGE);;
+					employeeIDTF.setText("");
+					passwordField.setText("");
 						}
 					}
 				});
 				signInBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
-				signInBtn.setBounds(258, 316, 133, 47);
+				signInBtn.setBounds(258, 289, 133, 47);
 				contentPane.add(signInBtn);
 	}
 }
