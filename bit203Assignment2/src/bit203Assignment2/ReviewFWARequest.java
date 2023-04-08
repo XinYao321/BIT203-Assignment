@@ -18,17 +18,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-/*ReviewFWARequest GUI class
- * This class display a list of FWA Requests to be accepted or rejected
- * It stores information such as */
+/*ViewFWAAnalytics GUI class
+ * This class display a list of FWA Requests */
 
 
 //@author Chai Wern Yong Sebastian B2000080
 @SuppressWarnings("serial")
-public class ReviewFWARequest extends JFrame {
+public class ViewFWAAnalytics extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField employeeIDTF;
 	private static JTable table;
 	private static JScrollPane scrollPane;
 
@@ -54,7 +52,7 @@ public class ReviewFWARequest extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReviewFWARequest frame = new ReviewFWARequest();
+					ViewFWAAnalytics frame = new ViewFWAAnalytics();
 					frame.setVisible(true);
 					sortByName();
 				} catch (Exception e) {
@@ -77,8 +75,8 @@ public class ReviewFWARequest extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ReviewFWARequest() {
-		setTitle("FWA Request List");
+	public ViewFWAAnalytics() {
+		setTitle("FWA Analytics Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1098, 736);
 		contentPane = new JPanel();
@@ -87,48 +85,13 @@ public class ReviewFWARequest extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel empIDLabel = new JLabel("Employee ID:");
-		empIDLabel.setBounds(58, 100, 567, 107);
-		empIDLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(empIDLabel);
-		
-		employeeIDTF = new JTextField();
-		employeeIDTF.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		employeeIDTF.setBounds(258, 130, 218, 41);
-		contentPane.add(employeeIDTF);
-		employeeIDTF.setColumns(10);
 
-		JLabel fwaReqLabel = new JLabel("FWA Request List");
+		JLabel fwaReqLabel = new JLabel("FWA Analytics Page");
 		fwaReqLabel.setBounds(387, 52, 288, 57);
 		fwaReqLabel.setFont(new Font("Tahoma", Font.BOLD, 27));
 		contentPane.add(fwaReqLabel);
 		
-		// Review button
-		JButton ReviewBtn = new JButton("Review");
-		ReviewBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (employeeIDTF.getText()==em1.getEmployeeID()||
-					employeeIDTF.getText()==em2.getEmployeeID()||
-					employeeIDTF.getText()==em3.getEmployeeID()||
-					employeeIDTF.getText()==em4.getEmployeeID()) {
-					ReviewPage review = new ReviewPage();
-					review.setVisible(true);
-				}
-				else if (employeeIDTF.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Input fields cannot be empty", "ERROR", JOptionPane.ERROR_MESSAGE);;
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Invalid employee ID or password", "ERROR", JOptionPane.ERROR_MESSAGE);;
-					employeeIDTF.setText("");
-					}
-			}
-		});
-		ReviewBtn.setForeground(Color.WHITE);
-		ReviewBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		ReviewBtn.setFocusable(false);
-		ReviewBtn.setBackground(Color.BLACK);
-		ReviewBtn.setBounds(485, 128, 138, 45);
-		contentPane.add(ReviewBtn);
+		
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 222, 1074, 434);
@@ -186,3 +149,4 @@ public class ReviewFWARequest extends JFrame {
 				contentPane.add(logOutBtn);
 	}
 }
+	
