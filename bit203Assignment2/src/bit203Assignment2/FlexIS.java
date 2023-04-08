@@ -2,6 +2,9 @@ package bit203Assignment2;
 import java.io.*;
 import java.util.*;
 
+// Date: 7th April 2023
+
+/*FlexIS class*/
 
 /*@authors
  * Sebastian Chai B2000080
