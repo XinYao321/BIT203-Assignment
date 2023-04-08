@@ -29,10 +29,10 @@ public class DisplayDailyScheduleDetails extends JFrame {
 	private static JScrollPane scrollPane;
 	
 	// Daily Schedule objects
-	DailySchedule ds1 = new DailySchedule("2023-03-13", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
-	DailySchedule ds2 = new DailySchedule("2023-03-15", "At my house", "9am-5pm", "I will be working at my house","");
-	DailySchedule ds3 = new DailySchedule("2023-03-18", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
-	DailySchedule ds4 = new DailySchedule("2023-03-25", "At home", "8am-4pm", "I will be preparing the presentation slides","");
+	DailySchedule ds1 = new DailySchedule("2023-04-10", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
+	DailySchedule ds2 = new DailySchedule("2023-04-15", "At my house", "9am-5pm", "I will be working at my house","");
+	DailySchedule ds3 = new DailySchedule("2023-04-20", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
+	DailySchedule ds4 = new DailySchedule("2023-04-25", "Shah Alam", "8am-4pm", "I will be preparing the presentation slides","");
 
 	// Employee objects
 	Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");

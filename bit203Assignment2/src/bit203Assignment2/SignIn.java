@@ -16,7 +16,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+//Date: 7th April 2023
 
+/*Sign In GUI class
+ * This class is for FlexIS users to sign in with their employee ID and password
+ * Input validation is required for employee ID and password*/
 
 // @author: Lee Xin Yao B2100617 
 @SuppressWarnings("serial")
