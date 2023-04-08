@@ -9,6 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -101,60 +103,86 @@ public class ReviewFWARequest extends JFrame {
 		fwaReqLabel.setFont(new Font("Tahoma", Font.BOLD, 27));
 		contentPane.add(fwaReqLabel);
 		
+		// Review button
+		JButton ReviewBtn = new JButton("Review");
+		ReviewBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (employeeIDTF.getText()==em1.getEmployeeID()||
+					employeeIDTF.getText()==em2.getEmployeeID()||
+					employeeIDTF.getText()==em3.getEmployeeID()||
+					employeeIDTF.getText()==em4.getEmployeeID()) {
+					ReviewPage review = new ReviewPage();
+					review.setVisible(true);
+				}
+				else if (employeeIDTF.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Input fields cannot be empty", "ERROR", JOptionPane.ERROR_MESSAGE);;
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Invalid employee ID or password", "ERROR", JOptionPane.ERROR_MESSAGE);;
+					employeeIDTF.setText("");
+					}
+			}
+		});
+		ReviewBtn.setForeground(Color.WHITE);
+		ReviewBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		ReviewBtn.setFocusable(false);
+		ReviewBtn.setBackground(Color.BLACK);
+		ReviewBtn.setBounds(485, 128, 138, 45);
+		contentPane.add(ReviewBtn);
+		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 222, 1074, 434);
 		contentPane.add(scrollPane);
 		
-		// Sign In button
-				JButton selectEmpBtn = new JButton("Review");
-				selectEmpBtn.setForeground(Color.WHITE);
-				selectEmpBtn.setBackground(Color.BLACK);
-				selectEmpBtn.setFocusable(false);
-				selectEmpBtn.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String employeeID = employeeIDTF.getText();
-						if(em1.getEmployeeID().equalsIgnoreCase(employeeID) || 
-							em2.getEmployeeID().equalsIgnoreCase(employeeID)||
-							em3.getEmployeeID().equalsIgnoreCase(employeeID)||
-							em4.getEmployeeID().equalsIgnoreCase(employeeID)) 
-						{
-							
-						}
-					}
-				});
 		table = new JTable();
 		table.setFillsViewportHeight(true);
 		scrollPane.setViewportView(table);
-		FWARequest frame = new FWARequest();
+		new FWARequest();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{em1.getEmployeeID(),fr1_1.getRequestID(),fr1_1.getRequestDate(),fr1_1.getDescription(),fr1_1.getReason(),fr1_1.getStatus(),fr1_1.getComment()},
-				{em1.getEmployeeID(),fr1_2.getRequestID(),fr1_2.getRequestDate(),fr1_2.getDescription(),fr1_2.getReason(),fr1_2.getStatus(),fr1_2.getComment()},
-				{em2.getEmployeeID(),fr2_1.getRequestID(),fr2_1.getRequestDate(),fr2_1.getDescription(),fr2_1.getReason(),fr2_1.getStatus(),fr2_1.getComment()},
-				{em2.getEmployeeID(),fr2_2.getRequestID(),fr2_2.getRequestDate(),fr2_2.getDescription(),fr2_2.getReason(),fr2_2.getStatus(),fr2_2.getComment()},
-				{em3.getEmployeeID(),fr3_1.getRequestID(),fr3_1.getRequestDate(),fr3_1.getDescription(),fr3_1.getReason(),fr3_1.getStatus(),fr3_1.getComment()},
-				{em3.getEmployeeID(),fr3_2.getRequestID(),fr3_2.getRequestDate(),fr3_2.getDescription(),fr3_2.getReason(),fr3_2.getStatus(),fr3_2.getComment()},
-				{em4.getEmployeeID(),fr4_1.getRequestID(),fr4_1.getRequestDate(),fr4_1.getDescription(),fr4_1.getReason(),fr4_1.getStatus(),fr4_1.getComment()},
-				{em4.getEmployeeID(),fr4_2.getRequestID(),fr4_2.getRequestDate(),fr4_2.getDescription(),fr4_2.getReason(),fr4_2.getStatus(),fr4_2.getComment()},
+				{em1.getEmployeeID(),fr1_1.getRequestID(),fr1_1.getRequestDate(),fr1_1.getWorkType(),fr1_1.getDescription(),fr1_1.getReason(),fr1_1.getStatus(),fr1_1.getComment()},
+				{em1.getEmployeeID(),fr1_2.getRequestID(),fr1_2.getRequestDate(),fr1_2.getWorkType(),fr1_2.getDescription(),fr1_2.getReason(),fr1_2.getStatus(),fr1_2.getComment()},
+				{em2.getEmployeeID(),fr2_1.getRequestID(),fr2_1.getRequestDate(),fr2_1.getWorkType(),fr2_1.getDescription(),fr2_1.getReason(),fr2_1.getStatus(),fr2_1.getComment()},
+				{em2.getEmployeeID(),fr2_2.getRequestID(),fr2_2.getRequestDate(),fr2_2.getWorkType(),fr2_2.getDescription(),fr2_2.getReason(),fr2_2.getStatus(),fr2_2.getComment()},
+				{em3.getEmployeeID(),fr3_1.getRequestID(),fr3_1.getRequestDate(),fr3_1.getWorkType(),fr3_1.getDescription(),fr3_1.getReason(),fr3_1.getStatus(),fr3_1.getComment()},
+				{em3.getEmployeeID(),fr3_2.getRequestID(),fr3_2.getRequestDate(),fr3_2.getWorkType(),fr3_2.getDescription(),fr3_2.getReason(),fr3_2.getStatus(),fr3_2.getComment()},
+				{em4.getEmployeeID(),fr4_1.getRequestID(),fr4_1.getRequestDate(),fr4_1.getWorkType(),fr4_1.getDescription(),fr4_1.getReason(),fr4_1.getStatus(),fr4_1.getComment()},
+				{em4.getEmployeeID(),fr4_2.getRequestID(),fr4_2.getRequestDate(),fr4_2.getWorkType(),fr4_2.getDescription(),fr4_2.getReason(),fr4_2.getStatus(),fr4_2.getComment()},
 				},
 			new String[] {
-				"Employee ID", "Request ID", "Request Date", "Description", "Reason", "Status", "Supervisor comments"
+				"Employee ID", "Request ID", "Request Date", "Work Type", "Description", "Reason", "Status", "Supervisor comments"
 			}
 					
 		));
-		// Back to dashboard button
-				JButton dashboardBtn = new JButton("Back to dashboard");
-				dashboardBtn.setForeground(Color.WHITE);
-				dashboardBtn.setBackground(Color.BLACK);
-				dashboardBtn.setFocusable(false);
-				dashboardBtn.addActionListener(new ActionListener() {
+		JButton dashboardBtn = new JButton("Back to dashboard");
+		dashboardBtn.setForeground(Color.WHITE);
+		dashboardBtn.setBackground(Color.BLACK);
+		dashboardBtn.setFocusable(false);
+		dashboardBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Display Supervisor dashboard
+				SupervisorDashboard supervisor = new SupervisorDashboard();
+				supervisor.setVisible(true);
+			}
+		});
+		dashboardBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		dashboardBtn.setBounds(20, 10, 187, 45);
+		contentPane.add(dashboardBtn);
+		
+		// Log out button
+				JButton logOutBtn = new JButton("Log Out");
+				logOutBtn.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						HRAdminDashboard hrAdmin = new HRAdminDashboard();
-						hrAdmin.setVisible(true);
+						SignIn signIn = new SignIn();
+						signIn.setVisible(true);
+						signIn.setResizable(false);
 					}
 				});
-				dashboardBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
-				dashboardBtn.setBounds(10, 21, 193, 45);
-				contentPane.add(dashboardBtn);
+				logOutBtn.setForeground(Color.WHITE);
+				logOutBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+				logOutBtn.setFocusable(false);
+				logOutBtn.setBackground(Color.BLACK);
+				logOutBtn.setBounds(874, 10, 138, 45);
+				contentPane.add(logOutBtn);
 	}
 }
