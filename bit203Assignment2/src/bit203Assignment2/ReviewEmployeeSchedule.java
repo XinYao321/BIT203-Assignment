@@ -32,6 +32,8 @@ public class ReviewEmployeeSchedule extends JFrame {
 	DailySchedule ds2 = new DailySchedule("2023-04-15", "At my house", "9am-5pm", "I will be working at my house","");
 	DailySchedule ds3 = new DailySchedule("2023-04-20", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
 	DailySchedule ds4 = new DailySchedule("2023-04-25", "Shah Alam", "8am-4pm", "I will be preparing the presentation slides","");
+	DailySchedule ds5 = new DailySchedule("2023-04-27","Kepong","9am-5pm","I'm having a meeting","");
+	DailySchedule ds6 = new DailySchedule("2023-05-01","Sunway Velocity","10am-6pm","I have an appoinment","");
 	
 	Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");
 	Employee em2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","Hybrid");
@@ -61,7 +63,7 @@ public class ReviewEmployeeSchedule extends JFrame {
 		scheduleTable.setModel(model);
 		model.addRow(dataRow);
 	}
-	
+	// Method to sort schedule table
 	public static void sortSchedule() {
 		scheduleTable.setAutoCreateRowSorter(true);
 	}
@@ -70,7 +72,7 @@ public class ReviewEmployeeSchedule extends JFrame {
 	 * Create the frame.
 	 */
 	public ReviewEmployeeSchedule() {
-		setTitle("Employee Schedule Page\r\n");
+		setTitle("Employee Schedule Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1036, 640);
 		contentPane = new JPanel();
@@ -96,7 +98,9 @@ public class ReviewEmployeeSchedule extends JFrame {
 				{em1.getName(),ds1.getDate(),ds1.getWorkLocation(),ds1.getWorkHours(),ds1.getWorkReport(),""},
 				{em2.getName(),ds2.getDate(),ds2.getWorkLocation(),ds2.getWorkHours(),ds2.getWorkReport(),""},
 				{em3.getName(),ds3.getDate(),ds3.getWorkLocation(),ds3.getWorkHours(),ds3.getWorkReport(),""},
-				{em4.getName(),ds4.getDate(),ds4.getWorkLocation(),ds4.getWorkHours(),ds4.getWorkReport(),""}
+				{em4.getName(),ds4.getDate(),ds4.getWorkLocation(),ds4.getWorkHours(),ds4.getWorkReport(),""},
+				{em1.getName(),ds5.getDate(),ds5.getWorkLocation(),ds5.getWorkHours(),ds5.getWorkReport(),""},
+				{em2.getName(),ds6.getDate(),ds6.getWorkLocation(),ds6.getWorkHours(),ds6.getWorkReport(),""}
 				
 			},
 			new String[] {
@@ -105,15 +109,16 @@ public class ReviewEmployeeSchedule extends JFrame {
 		));
 		scheduleTable.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
+		// Back to dashboard button
 		JButton dashboardBtn = new JButton("Back to dashboard");
 		dashboardBtn.setForeground(Color.WHITE);
 		dashboardBtn.setBackground(Color.BLACK);
 		dashboardBtn.setFocusable(false);
 		dashboardBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Display dashboard for HR Admin
-				HRAdminDashboard dashboard = new HRAdminDashboard();
-				dashboard.setVisible(true);
+				// Display Supervisor dashboard
+				SupervisorDashboard supervisor = new SupervisorDashboard();
+				supervisor.setVisible(true);
 			}
 		});
 		dashboardBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
