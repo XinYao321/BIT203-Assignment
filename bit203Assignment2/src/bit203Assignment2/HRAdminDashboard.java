@@ -122,6 +122,21 @@ public class HRAdminDashboard extends JFrame {
 		displayEmpDetailBtn.setBounds(234, 305, 224, 41);
 		contentPane.add(displayEmpDetailBtn);
 		
+		// Display Daily Schedule details button
+				JButton displayDSDetailBtn = new JButton("Display Daily Schedule details");
+				displayDSDetailBtn.setBackground(Color.BLACK);
+				displayDSDetailBtn.setForeground(Color.WHITE);
+				displayDSDetailBtn.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						DisplayDailyScheduleDetails dsDetails = new DisplayDailyScheduleDetails();
+						dsDetails.setVisible(true);
+					}
+				});
+				displayDSDetailBtn.setFocusable(false);
+				displayDSDetailBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+				displayDSDetailBtn.setBounds(234, 372, 224, 41);
+				contentPane.add(displayDSDetailBtn);
+		
 		JLabel welcomeLabel = new JLabel("Welcome!");
 		welcomeLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		welcomeLabel.setBounds(263, 6, 147, 41);
