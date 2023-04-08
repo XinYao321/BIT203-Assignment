@@ -99,7 +99,7 @@ public class DisplayEmployeeDetails extends JFrame {
 		RegisterEmployee frame = new RegisterEmployee();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"None",sp.getEmployeeID(),sp.getName(),sp.getPosition(),sp.getEmail(),"None","Supervisor"},
+				{d2,sp.getEmployeeID(),sp.getName(),sp.getPosition(),sp.getEmail(),"None","Supervisor"},
 				{d2,em1.getEmployeeID(),em1.getName(),em1.getPosition(),em1.getEmail(),"Ali","Employee"},
 				{d2,em2.getEmployeeID(),em2.getName(),em2.getPosition(),em2.getEmail(),"Ali","Employee"},
 				{d2,em3.getEmployeeID(),em3.getName(),em3.getPosition(),em3.getEmail(),"Ali","Employee"},

@@ -28,12 +28,12 @@ public class ReviewEmployeeSchedule extends JFrame {
 	private static JTable scheduleTable;
 	
 	// DailySchedule objects for update and review purposes
-	DailySchedule ds1 = new DailySchedule("2023-04-10", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
-	DailySchedule ds2 = new DailySchedule("2023-04-15", "At my house", "9am-5pm", "I will be working at my house","");
-	DailySchedule ds3 = new DailySchedule("2023-04-20", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
-	DailySchedule ds4 = new DailySchedule("2023-04-25", "Shah Alam", "8am-4pm", "I will be preparing the presentation slides","");
-	DailySchedule ds5 = new DailySchedule("2023-04-27","Kepong","9am-5pm","I'm having a meeting","");
-	DailySchedule ds6 = new DailySchedule("2023-05-01","Sunway Velocity","10am-6pm","I have an appoinment","");
+	DailySchedule ds1 = new DailySchedule("2023-04-10", "Starbucks", "8am-4pm", "I will have meeting with other staffs","Understood");
+	DailySchedule ds2 = new DailySchedule("2023-04-15", "At my house", "9am-5pm", "I will be working at my house","Remember to hand in your report");
+	DailySchedule ds3 = new DailySchedule("2023-04-20", "Library", "10am-6pm", "I will be scheduling the appointments for next week","Good job");
+	DailySchedule ds4 = new DailySchedule("2023-04-25", "Shah Alam", "8am-4pm", "I will be preparing the presentation slides","I hope the PPT slides are clean and tidy");
+	DailySchedule ds5 = new DailySchedule("2023-04-27","Kepong","9am-5pm","I'm having a meeting","What meeting?");
+	DailySchedule ds6 = new DailySchedule("2023-05-01","Sunway Velocity","10am-6pm","I have an appoinment","Understood");
 	
 	Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");
 	Employee em2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","Hybrid");
@@ -95,12 +95,12 @@ public class ReviewEmployeeSchedule extends JFrame {
 		scrollPane.setViewportView(scheduleTable);
 		scheduleTable.setModel(new DefaultTableModel(
 			new Object[][] {
-				{em1.getName(),ds1.getDate(),ds1.getWorkLocation(),ds1.getWorkHours(),ds1.getWorkReport(),""},
-				{em2.getName(),ds2.getDate(),ds2.getWorkLocation(),ds2.getWorkHours(),ds2.getWorkReport(),""},
-				{em3.getName(),ds3.getDate(),ds3.getWorkLocation(),ds3.getWorkHours(),ds3.getWorkReport(),""},
-				{em4.getName(),ds4.getDate(),ds4.getWorkLocation(),ds4.getWorkHours(),ds4.getWorkReport(),""},
-				{em1.getName(),ds5.getDate(),ds5.getWorkLocation(),ds5.getWorkHours(),ds5.getWorkReport(),""},
-				{em2.getName(),ds6.getDate(),ds6.getWorkLocation(),ds6.getWorkHours(),ds6.getWorkReport(),""}
+				{em1.getName(),ds1.getDate(),ds1.getWorkLocation(),ds1.getWorkHours(),ds1.getWorkReport(),ds1.getSupervisorComments()},
+				{em2.getName(),ds2.getDate(),ds2.getWorkLocation(),ds2.getWorkHours(),ds2.getWorkReport(),ds2.getSupervisorComments()},
+				{em3.getName(),ds3.getDate(),ds3.getWorkLocation(),ds3.getWorkHours(),ds3.getWorkReport(),ds3.getSupervisorComments()},
+				{em4.getName(),ds4.getDate(),ds4.getWorkLocation(),ds4.getWorkHours(),ds4.getWorkReport(),ds4.getSupervisorComments()},
+				{em1.getName(),ds5.getDate(),ds5.getWorkLocation(),ds5.getWorkHours(),ds5.getWorkReport(),ds5.getSupervisorComments()},
+				{em2.getName(),ds6.getDate(),ds6.getWorkLocation(),ds6.getWorkHours(),ds6.getWorkReport(),ds6.getSupervisorComments()}
 				
 			},
 			new String[] {

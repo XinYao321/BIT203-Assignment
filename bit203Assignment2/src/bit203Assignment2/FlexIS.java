@@ -1,4 +1,5 @@
 package bit203Assignment2;
+import java.io.*;
 import java.util.*;
 
 
@@ -7,7 +8,7 @@ import java.util.*;
  * Lee Xin Yao B2100617*/
 
 
-public class FlexIS {
+public class FlexIS implements Serializable{
 	
 	private String employeeID, deptID;
 	/*Employee and Department collections*/
