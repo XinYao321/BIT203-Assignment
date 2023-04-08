@@ -28,12 +28,11 @@ public class DisplayDailyScheduleDetails extends JFrame {
 	private static JTable table;
 	private static JScrollPane scrollPane;
 	
-	// Daily Schedule objects
 	DailySchedule ds1 = new DailySchedule("2023-04-10", "Starbucks", "8am-4pm", "I will have meeting with other staffs","");
 	DailySchedule ds2 = new DailySchedule("2023-04-15", "At my house", "9am-5pm", "I will be working at my house","");
 	DailySchedule ds3 = new DailySchedule("2023-04-20", "Library", "10am-6pm", "I will be scheduling the appointments for next week","");
 	DailySchedule ds4 = new DailySchedule("2023-04-25", "Shah Alam", "8am-4pm", "I will be preparing the presentation slides","");
-
+	
 	// Employee objects
 	Employee em1 = new Employee("E100","IamAdam","Adam","Accountant","adam246@gmail.com","Work-from-home");
 	Employee em2 = new Employee("E200","IamLucas","Lucas","Assistant Manager","lucaslee@gmail.com","Hybrid");
@@ -60,7 +59,7 @@ public class DisplayDailyScheduleDetails extends JFrame {
 		});
 	}
 
-	public  static void AddRowToTable(Object[] dataRow) {
+	public static void AddRowToTable(Object[] dataRow) {
 		DefaultTableModel model =  (DefaultTableModel) table.getModel();
 		table.setModel(model);
 		model.addRow(dataRow);
