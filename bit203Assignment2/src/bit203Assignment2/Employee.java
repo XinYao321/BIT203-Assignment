@@ -1,6 +1,6 @@
 package bit203Assignment2;
 
-
+import java.io.*;
 /*
  * This is the Employee superclass
  * Supervisor and HRAdmin class are its subclasses
@@ -13,7 +13,7 @@ package bit203Assignment2;
  * Lee Xin Yao B2100617
  * */
 
-public class Employee {
+public class Employee implements Serializable{
 	// Attributes
 	private String employeeID, password, name, position, email, FWAStatus;
 	private Department deptID, deptName;

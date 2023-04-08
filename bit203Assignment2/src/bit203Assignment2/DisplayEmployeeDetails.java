@@ -14,11 +14,12 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+// Date: 7th April 2023
 
 /*DisplayEmployeeDetails GUI class
- * This class display a list of employees and supervisor
- * It stores information such as department, employee ID, Name, Position, 
- * Email, Supervisor name and user type*/
+ * This class stores a list of employees and supervisor
+ * It stores information such as department, employee ID, name, position, 
+ * email, supervisor name and user type*/
 
 //@author Lee Xin Yao B2100617
 @SuppressWarnings("serial")
@@ -39,7 +40,7 @@ public class DisplayEmployeeDetails extends JFrame {
 	Employee em3 = new Employee("E300","IamSara","Sara","Assistant Manager","sara578@gmail.com","Flexi-hours");
 	Employee em4 = new Employee("E400","IamJohn","John","Software developer","johnwong88@gmail.com","Work-from-home");
 	
-	// Supervisor objects
+	// Supervisor object
 	Supervisor sp = new Supervisor("S100","IamAli","Ali","Supervisor","alimuhamad@gmail.com","-");
 		
 	/**
@@ -65,6 +66,7 @@ public class DisplayEmployeeDetails extends JFrame {
 		model.addRow(dataRow);
 	}
 	
+	// Method to sort the table
 	public static void sortByName() {
 		table.setAutoCreateRowSorter(true);
 	}
@@ -98,10 +100,10 @@ public class DisplayEmployeeDetails extends JFrame {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"None",sp.getEmployeeID(),sp.getName(),sp.getPosition(),sp.getEmail(),"None","Supervisor"},
-				{d1,em1.getEmployeeID(),em1.getName(),em1.getPosition(),em1.getEmail(),"Ali","Employee"},
+				{d2,em1.getEmployeeID(),em1.getName(),em1.getPosition(),em1.getEmail(),"Ali","Employee"},
 				{d2,em2.getEmployeeID(),em2.getName(),em2.getPosition(),em2.getEmail(),"Ali","Employee"},
-				{d3,em3.getEmployeeID(),em3.getName(),em3.getPosition(),em3.getEmail(),"Ali","Employee"},
-				{d4,em4.getEmployeeID(),em4.getName(),em4.getPosition(),em4.getEmail(),"Ali","Employee"}
+				{d2,em3.getEmployeeID(),em3.getName(),em3.getPosition(),em3.getEmail(),"Ali","Employee"},
+				{d2,em4.getEmployeeID(),em4.getName(),em4.getPosition(),em4.getEmail(),"Ali","Employee"}
 			},
 			new String[] {
 				"Department", "Employee ID", "Name", "Position", "Email", "Supervisor Name", "User Type"

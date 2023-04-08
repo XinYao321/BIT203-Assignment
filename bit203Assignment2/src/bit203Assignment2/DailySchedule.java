@@ -1,6 +1,6 @@
 package bit203Assignment2;
 
-
+import java.io.*;
 /*This is the DailySchedule class
  * It stores information of an employee's daily schedule
  * Such as date, work location, work hours, work report, and supervisor comment*/
@@ -9,7 +9,7 @@ package bit203Assignment2;
  * Lee Xin Yao B2100617
  */
 
-public class DailySchedule {
+public class DailySchedule implements Serializable{
 	private String date, workLocation, workHours, workReport, supervisorComments; //Attributes
 	
 	

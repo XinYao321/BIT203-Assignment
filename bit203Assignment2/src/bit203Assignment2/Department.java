@@ -1,12 +1,13 @@
 package bit203Assignment2;
 
 import java.util.ArrayList;
+import java.io.*;
 
 
 /*@author:
  * Lee Xin Yao B2100617
 */
-public class Department {
+public class Department implements Serializable{
 	private String deptID, deptName; // Department attributes
 	private ArrayList<Employee> employee= new ArrayList<Employee>(); // Employee object
 	
@@ -35,7 +36,7 @@ public class Department {
 	
 	// toString() method
 	public String toString() {
-		return (getDeptID() +": "+getDeptName());
+		return (getDeptID() +" - "+getDeptName());
 	}
 	
 }

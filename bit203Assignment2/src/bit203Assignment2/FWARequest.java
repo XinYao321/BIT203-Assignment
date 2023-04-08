@@ -1,11 +1,13 @@
 package bit203Assignment2;
 
+import java.io.*;
+
 // FWARequest class
 
 /*@author:
  * Sebastian Chai B2000080
  */
-public class FWARequest {
+public class FWARequest implements Serializable{
 private String requestID;
 	private String requestDate;
 	private String workType;
