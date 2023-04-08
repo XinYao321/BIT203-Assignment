@@ -128,5 +128,19 @@ public class HRAdminDashboard extends JFrame {
 		welcomeLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		welcomeLabel.setBounds(263, 6, 147, 41);
 		contentPane.add(welcomeLabel);
+		
+		JButton saveAndLoadBtn = new JButton("Save and Load Data");
+		saveAndLoadBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SaveAndLoadData sld = new SaveAndLoadData();
+				sld.setVisible(true);
+			}
+		});
+		saveAndLoadBtn.setForeground(Color.WHITE);
+		saveAndLoadBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		saveAndLoadBtn.setFocusable(false);
+		saveAndLoadBtn.setBackground(Color.BLACK);
+		saveAndLoadBtn.setBounds(234, 366, 224, 41);
+		contentPane.add(saveAndLoadBtn);
 	}
 }

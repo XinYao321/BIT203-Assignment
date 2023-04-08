@@ -1,5 +1,6 @@
 package bit203Assignment2;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,9 +16,11 @@ import java.util.*;
 import java.io.*;
 // Date: 7th April 2023
 
-/*Save and Load Data GUI class*/
+/*Save and Load Data GUI class
+ * This class is for saving and loading data*/
 
 // author: Lee Xin Yao B2100617
+@SuppressWarnings("serial")
 public class SaveAndLoadData extends JFrame {
 
 	private JPanel contentPane;
@@ -46,7 +49,7 @@ public class SaveAndLoadData extends JFrame {
 	public SaveAndLoadData() {
 		setTitle("Save and Load Data Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 886, 576);
+		setBounds(100, 100, 952, 673);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -56,13 +59,15 @@ public class SaveAndLoadData extends JFrame {
 		textField = new JTextField();
 		//textField.setHorizontalAlignment(SwingConstants.LEFT);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		textField.setBounds(45, 163, 745, 327);
+		textField.setBounds(80, 219, 745, 327);
 		textField.setColumns(10);
 		contentPane.add(textField);
 		
 		// Open file button
-		JButton openBtn = new JButton("Department File");
-		openBtn.addActionListener(new ActionListener() {
+		JButton departmentBtn = new JButton("Department File");
+		departmentBtn.setForeground(Color.WHITE);
+		departmentBtn.setBackground(Color.BLACK);
+		departmentBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Include department.txt file path
 				File file = new File("C:\\Users\\User\\Desktop\\department.txt");
@@ -78,12 +83,14 @@ public class SaveAndLoadData extends JFrame {
 				}
 			}
 		});
-		openBtn.setFocusable(false);
-		openBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		openBtn.setBounds(45, 53, 166, 44);
-		contentPane.add(openBtn);
+		departmentBtn.setFocusable(false);
+		departmentBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		departmentBtn.setBounds(80, 109, 166, 44);
+		contentPane.add(departmentBtn);
 		
 		JButton employeeFileBtn = new JButton("Employee File");
+		employeeFileBtn.setForeground(Color.WHITE);
+		employeeFileBtn.setBackground(Color.BLACK);
 		employeeFileBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Include department.txt file path
@@ -102,11 +109,13 @@ public class SaveAndLoadData extends JFrame {
 		});
 		employeeFileBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		employeeFileBtn.setFocusable(false);
-		employeeFileBtn.setBounds(250, 53, 142, 44);
+		employeeFileBtn.setBounds(285, 109, 142, 44);
 		contentPane.add(employeeFileBtn);
 		
-		JButton btnFwaRequestFile = new JButton("Daily Schedule File");
-		btnFwaRequestFile.addActionListener(new ActionListener() {
+		JButton dailyScheduleBtn = new JButton("Daily Schedule File");
+		dailyScheduleBtn.setForeground(Color.WHITE);
+		dailyScheduleBtn.setBackground(Color.BLACK);
+		dailyScheduleBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File file = new File("C:\\Users\\User\\Desktop\\dailySchedule.txt");
 				try {
@@ -119,13 +128,15 @@ public class SaveAndLoadData extends JFrame {
 				}
 			}
 		});
-		btnFwaRequestFile.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnFwaRequestFile.setFocusable(false);
-		btnFwaRequestFile.setBounds(431, 53, 165, 44);
-		contentPane.add(btnFwaRequestFile);
+		dailyScheduleBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		dailyScheduleBtn.setFocusable(false);
+		dailyScheduleBtn.setBounds(451, 109, 182, 44);
+		contentPane.add(dailyScheduleBtn);
 		
 		// Clear button
 		JButton clearBtn = new JButton("Clear");
+		clearBtn.setForeground(Color.WHITE);
+		clearBtn.setBackground(Color.BLACK);
 		clearBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
@@ -133,7 +144,35 @@ public class SaveAndLoadData extends JFrame {
 		});
 		clearBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		clearBtn.setFocusable(false);
-		clearBtn.setBounds(623, 53, 124, 44);
+		clearBtn.setBounds(658, 109, 124, 44);
 		contentPane.add(clearBtn);
+		
+		// Back to dashboard button
+		JButton dashboardBtn = new JButton("Back to dashboard");
+		dashboardBtn.setForeground(Color.WHITE);
+		dashboardBtn.setBackground(Color.BLACK);
+		dashboardBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HRAdminDashboard hrAdmin = new HRAdminDashboard();
+				hrAdmin.setVisible(true);
+			}
+		});
+		dashboardBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		dashboardBtn.setBounds(10, 10, 187, 44);
+		contentPane.add(dashboardBtn);
+		
+		// Log out button
+		JButton logOutBtn = new JButton("Log Out");
+		logOutBtn.setForeground(Color.WHITE);
+		logOutBtn.setBackground(Color.BLACK);
+		logOutBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SignIn signIn = new SignIn();
+				signIn.setVisible(true);
+			}
+		});
+		logOutBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		logOutBtn.setBounds(798, 13, 130, 44);
+		contentPane.add(logOutBtn);
 	}
 }

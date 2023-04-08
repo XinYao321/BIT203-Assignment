@@ -11,7 +11,7 @@ import java.util.*;
 public class FlexISGui {
 	public static void main(String[] args) {
 		//FlexIS System start with Welcome Message page
-		// Users will be navigate to other pages by clicking on the buttons in each page
+		// Users will navigate to other pages by clicking on the buttons in each page
 		WelcomeMessage wm = new WelcomeMessage();
 		wm.setResizable(false);
 		wm.setVisible(true);

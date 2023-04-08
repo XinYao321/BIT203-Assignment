@@ -1,6 +1,7 @@
 package bit203Assignment2;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.io.*;
 
 
@@ -37,6 +38,11 @@ public class Department implements Serializable{
 	// toString() method
 	public String toString() {
 		return (getDeptID() +" - "+getDeptName());
+	}
+
+	public Map<String, Long> getWorkType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
