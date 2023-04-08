@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -25,6 +26,7 @@ import java.awt.event.ActionEvent;
 public class ReviewFWARequest extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField employeeIDTF;
 	private static JTable table;
 	private static JScrollPane scrollPane;
 
@@ -61,7 +63,7 @@ public class ReviewFWARequest extends JFrame {
 	}
 	
 	public static void AddRowToTable(Object[] dataRow) {
-		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		DefaultTableModel model =  (DefaultTableModel) table.getModel();
 		table.setModel(model);
 		model.addRow(dataRow);
 	}
@@ -82,6 +84,17 @@ public class ReviewFWARequest extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel empIDLabel = new JLabel("Employee ID:");
+		empIDLabel.setBounds(58, 100, 567, 107);
+		empIDLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		contentPane.add(empIDLabel);
+		
+		employeeIDTF = new JTextField();
+		employeeIDTF.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		employeeIDTF.setBounds(258, 130, 218, 41);
+		contentPane.add(employeeIDTF);
+		employeeIDTF.setColumns(10);
 
 		JLabel fwaReqLabel = new JLabel("FWA Request List");
 		fwaReqLabel.setBounds(387, 52, 288, 57);
@@ -92,6 +105,23 @@ public class ReviewFWARequest extends JFrame {
 		scrollPane.setBounds(10, 222, 1074, 434);
 		contentPane.add(scrollPane);
 		
+		// Sign In button
+				JButton selectEmpBtn = new JButton("Review");
+				selectEmpBtn.setForeground(Color.WHITE);
+				selectEmpBtn.setBackground(Color.BLACK);
+				selectEmpBtn.setFocusable(false);
+				selectEmpBtn.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String employeeID = employeeIDTF.getText();
+						if(em1.getEmployeeID().equalsIgnoreCase(employeeID) || 
+							em2.getEmployeeID().equalsIgnoreCase(employeeID)||
+							em3.getEmployeeID().equalsIgnoreCase(employeeID)||
+							em4.getEmployeeID().equalsIgnoreCase(employeeID)) 
+						{
+							
+						}
+					}
+				});
 		table = new JTable();
 		table.setFillsViewportHeight(true);
 		scrollPane.setViewportView(table);
@@ -108,9 +138,23 @@ public class ReviewFWARequest extends JFrame {
 				{em4.getEmployeeID(),fr4_2.getRequestID(),fr4_2.getRequestDate(),fr4_2.getDescription(),fr4_2.getReason(),fr4_2.getStatus(),fr4_2.getComment()},
 				},
 			new String[] {
-				"Employee ID", "Name", "Position", "Date", "Work Location", "Work Hours", "Work Report", "Supervisor comments"
+				"Employee ID", "Request ID", "Request Date", "Description", "Reason", "Status", "Supervisor comments"
 			}
+					
 		));
+		// Back to dashboard button
+				JButton dashboardBtn = new JButton("Back to dashboard");
+				dashboardBtn.setForeground(Color.WHITE);
+				dashboardBtn.setBackground(Color.BLACK);
+				dashboardBtn.setFocusable(false);
+				dashboardBtn.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						HRAdminDashboard hrAdmin = new HRAdminDashboard();
+						hrAdmin.setVisible(true);
+					}
+				});
+				dashboardBtn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+				dashboardBtn.setBounds(10, 21, 193, 45);
+				contentPane.add(dashboardBtn);
 	}
-
 }
