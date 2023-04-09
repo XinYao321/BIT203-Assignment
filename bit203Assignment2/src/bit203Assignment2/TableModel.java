@@ -1,10 +1,13 @@
 package bit203Assignment2;
+
+import javax.swing.table.AbstractTableModel;
+
 // Date: 7th April 2023
 
 /*Table Model class*/
 
 // @author: Lee Xin Yao B2100617
-public class TableModel {
+public class TableModel extends AbstractTableModel{
 	private Object[][] data = {};
 	  private String[] columnNames = {};
 	  private Class[] columnClass = {};
