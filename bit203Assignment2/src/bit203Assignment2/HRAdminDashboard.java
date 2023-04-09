@@ -14,8 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.UIManager;
 
+// Date: 7th April 2023
 /*HRAdminDashboard GUI class
- * It act as the dashboard page and display options for HR Admin*/
+ * It act as the HR Admin dashboard page and display options for HR Admin*/
 
 //@author Lee Xin Yao B2100617
 
